@@ -1,0 +1,244 @@
+$main_width: 400px;
+$main_height: 420px;
+$radius: 10px;
+$tarsition: 300ms;
+
+@mixin date_elem {
+    width: 50px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+}
+
+@mixin year_month_elem ($w_item, $h_item) {
+    width: calc((380px - 20px) / $w_item);
+    height: calc((300px - 10px) / $h_item);
+    display: grid;
+    place-items: center;
+}
+
+@mixin pos {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+}
+
+
+@mixin hover_effect ($color) {
+    cursor: pointer;
+    color: $color;
+}
+
+
+
+
+.calendar_wrapp {
+    position: relative;
+    width: $main_width;
+    height: $main_height;
+    border-radius: $radius;
+    padding: 10px;
+    background-color: red;
+    overflow: hidden;
+
+
+    header {
+        width: inherit;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .arrows {
+            display: flex;
+            justify-content: space-between;
+            width: 50px;
+
+            h2:hover {
+                @include hover_effect(white)
+            }
+        }
+
+        .date_title {
+            &:hover {
+                @include hover_effect(white)
+            }
+        }
+
+        .back_today {
+            margin-top: 5px;
+            &:hover {
+                @include hover_effect(orange)
+            }
+        }
+    }
+
+    .emty {
+        height: 50px;
+    }
+
+    main {
+        width: calc($main_width - 20px);
+        height: calc($main_height - 20px - 100px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .select_date {
+        border: 3px solid blue;
+    }
+
+
+    /* ==================== datepicker style  ==================== */
+
+    .date {
+        width: calc($main_width - 20px);
+        height: calc($main_height - 20px);
+        transition: $tarsition;
+        @include pos;
+
+        .week_days {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+
+            .elem {
+                @include date_elem();
+            }
+        }
+
+        main {
+            .month_dates {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                height: 300px;
+
+                .row {
+                    display: flex;
+                    gap: 5px;
+                    align-items: stretch;
+
+                    .data_elem {
+                        @include date_elem();
+                        background-color: rgb(189, 10, 10);
+                        font-weight: bold;
+                    }
+
+                    .prev_month_date,
+                    .next_month_date {
+                        color: gray !important;
+
+                        &:hover {
+                            color: rgb(228, 176, 176) !important;
+
+                        }
+                    }
+
+                    .data_elem:hover {
+                        @include hover_effect(white);
+
+                    }
+
+                    .today {
+                        background-color: blue;
+                    }
+                }
+
+            }
+        }
+    }
+
+    /* ==================== monthpicker style  ==================== */
+
+    .month {
+        width: calc($main_width - 20px);
+        height: calc($main_height - 20px);
+        transform: scale(1.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: $tarsition;
+        @include pos;
+    }
+
+    .month_in_year {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .row {
+            display: flex;
+            gap: 5px;
+
+            .data_elem {
+                @include year_month_elem(4, 3);
+            }
+
+            .data_elem {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    /* ==================== years_picker style  ==================== */
+
+    .year {
+        width: calc($main_width - 20px);
+        height: calc($main_height - 20px);
+        transform: scale(1.5);
+        visibility: hidden;
+        opacity: 0;
+        transition: $tarsition;
+        @include pos;
+    }
+
+    .years {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .row {
+            display: flex;
+            gap: 5px;
+
+            .data_elem {
+                @include year_month_elem(3, 3);
+            }
+
+            .data_elem {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .active_month,
+    .active_year {
+        background-color: blue;
+    }
+
+
+}
+
+
+
+
+.show {
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: $tarsition;
+}
+
+.hide {
+    transition: $tarsition;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transform: scale(.5) !important;
+}
