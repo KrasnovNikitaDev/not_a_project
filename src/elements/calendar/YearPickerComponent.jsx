@@ -13,10 +13,11 @@ export const YearPicker = ({ date }) => {
     return <div className="years">
         {
             dataArray.map((row, i) => {
-                return <div className="row">
+                return <div className="row" key={i}>
                     {
-                        row.map((elem) => {
+                        row.map((elem, i) => {
                             return <div
+                                key={i}
                                 className={elem.className}
                                 onClick={(e) => select_item(e, elem)}>
                                 {elem.v}

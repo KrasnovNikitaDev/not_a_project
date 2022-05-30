@@ -1,11 +1,49 @@
-import React, { Suspense } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { Calendar } from "./elements/calendar/Calendara.jsx";
+import { Navigation } from "./elements/navigation/Navigation.jsx";
+import { Form } from "./elements/login/Form.jsx";
+import { ToDOList } from "./elements/toDoList/List.jsx";
+import { List } from "./elements/toDoList/List.jsx";
+import { useSelector } from "react-redux";
 
+
+const Modal = ({ fn }) => {
+    return ReactDOM.createPortal(
+        <div className="modal_wrapper">
+            <Form setLoginFunction={fn} />
+        </div>
+        , document.querySelector('#modal'))
+}
+
+const Main = () => {
+    return <main>
+        <ToDOList />
+        <Calendar />
+    </main>
+}
 
 
 export default function App() {
+    const isLogin = localStorage.getItem('login') ? true : false;
+    const [login, setLogin] = useState(isLogin);
+    const handleLogin = () => setLogin(() => localStorage.getItem('login') ? true : false);
+    const date = useSelector(({calendar_reducer}) => calendar_reducer.date);
+    const navigate = useNavigate();
+
     return <>
-            <Calendar />
+        <div>
+            <Navigation fn={handleLogin} />
+        </div>
+        <Routes>
+            <Route path='/' element={<Main />} >
+                <Route path="/"  element={<List />} />
+                <Route path="done" element={<List />} />
+                <Route path="all" element={<List />} />
+            </Route>
+            <Route path="dashboard" />
+        </Routes>
+        {login || <Modal fn={handleLogin} />}
     </>
 }

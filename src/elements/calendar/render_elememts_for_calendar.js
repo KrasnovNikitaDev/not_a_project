@@ -16,6 +16,22 @@ export const currentDate = new Date().getDate();
 
 let yearCount = 0;
 
+const params_for_date_links = (date, month, year) => {
+    if (month < 1) {
+        month = 12;
+        year -= 1;
+    }
+    if (month > 12) {
+        month = 1;
+        year += 1;
+    }
+
+    if (month < 10) month = '0' + month;
+    if (date < 10) date = '0' + date;
+
+    return `${date}.${month}.${year}`;
+}
+
 
 /* =====================START DATE_PICKER_COMPONENT===================== */
 export const month = (n) => array_of_month[n];
@@ -23,8 +39,6 @@ export const month = (n) => array_of_month[n];
 export const render_dates = (date) => {
     let arr = [];
     let count = 0;
-
-
 
     let daysInCurrentMonth = new Date(
         new Date().setMonth(date.currentMonth + 1, 0)
@@ -53,7 +67,8 @@ export const render_dates = (date) => {
             let o = {
                 v: datesPrevMonth,
                 n: datesPrevMonth,
-                class_name: 'prev_month_date'
+                class_name: 'prev_month_date',
+                link_params: params_for_date_links(datesPrevMonth, date.currentMonth, date.currentYear)
             }
 
             i === 0 && arr.push([]);
@@ -71,6 +86,8 @@ export const render_dates = (date) => {
                 v: i + 1,
                 n: i + 1,
                 class_name: 'month_date',
+                link_params: params_for_date_links(i + 1, date.currentMonth + 1, date.currentYear)
+
             }
 
             if (o.v === date.today && currentMonth === date.currentMonth && currentYear === date.currentYear) o.class_name += ' today select_date';
@@ -95,7 +112,10 @@ export const render_dates = (date) => {
             let o = {
                 v: number,
                 n: 1 + i,
-                class_name: 'next_month_date'
+                class_name: 'next_month_date',
+                link_params: params_for_date_links(number, date.currentMonth + 2, date.currentYear)
+
+
             }
 
             arr[count].push(o);
@@ -110,7 +130,9 @@ export const render_dates = (date) => {
                 let o = {
                     v: number,
                     n: 1,
-                    class_name: 'next_month_date'
+                    class_name: 'next_month_date',
+                    link_params: params_for_date_links(number, date.currentMonth + 2, date.currentYear)
+
                 }
 
                 arr[count].push(o);
@@ -191,12 +213,12 @@ export const set_date_prev_next_month = (arg, n, dispatch) => {
 export const prevArrow = (dispatch, month, year) => {
     if (!(month || month === 0) && year) {
         dispatch(action.PREV_YEAR);
-    } 
-     if (!month && !year) {
+    }
+    if (!month && !year) {
         yearCount -= 9;
         dispatch(action.SET_YEAR(currentYear + yearCount))
-    } 
-    if(month || month === 0 && year) {
+    }
+    if (month || month === 0 && year) {
         dispatch(action.SET_DATE_PREV_MONTH())
     }
 }
@@ -210,7 +232,7 @@ export const nextArrow = (dispatch, month, year) => {
         yearCount += 9;
         dispatch(action.SET_YEAR(currentYear + yearCount))
     }
-    if(month || month === 0 && year) {
+    if (month || month === 0 && year) {
         dispatch(action.SET_DATE_NEXT_MONTH())
     }
 }
@@ -220,7 +242,7 @@ export const selectItem = (e, value, dispatch, obj) => {
     let date = document.querySelector('.date');
     let year = document.querySelector('.year');
 
-    if(value === 'month'){
+    if (value === 'month') {
         dispatch(action.SET_MONTH(obj.n));
         month.classList.toggle('show');
         date.classList.toggle('hide');
@@ -233,7 +255,7 @@ export const selectItem = (e, value, dispatch, obj) => {
 }
 
 
-export function render_years(value){
+export function render_years(value) {
     let arrMatrix = []
     let count = 0;
 

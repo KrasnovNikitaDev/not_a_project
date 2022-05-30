@@ -6,13 +6,14 @@ import { WeekDays, DataPicker } from "./DatePickerComponent.jsx";
 import { MonthPicker } from "./MonthPickerComponent.jsx";
 import { YearPicker } from "./YearPickerComponent.jsx";
 import * as action from '../../store/action.js';
+import { Routes, Route, Link, useLocation, useParams, Outlet, useOutletContext, useSearchParams} from "react-router-dom";
 
 
 const Header = ({ date, month, year }) => {
     const dispatch = useDispatch();
-
-    const selectMonth = (e) => helper.set_date_picker('month-next');
-    const selectYear = (e) => helper.set_date_picker('year-next');
+    
+    const selectMonth = () => helper.set_date_picker('month-next');
+    const selectYear = () => helper.set_date_picker('year-next');
 
     const prev = () => helper.prevArrow(dispatch, month, year);
     const next = () => helper.nextArrow(dispatch, month, year);
@@ -29,9 +30,11 @@ const Header = ({ date, month, year }) => {
                 }
                 {
                     date && <h5 className="back_today" onClick={set_today}>
-                        {helper.currentDate + ' '}
-                        {helper.array_of_month_for_date[helper.currentMonth] + ' '}
-                        {helper.currentYear}
+                        <Link to={`/?date=${new Date().toLocaleDateString()}`}>
+                            {helper.currentDate + ' '}
+                            {helper.array_of_month_for_date[helper.currentMonth] + ' '}
+                            {helper.currentYear}
+                        </Link>
                     </h5>
                 }
             </div>
@@ -74,7 +77,7 @@ const Month = memo(({ date }) => {
 
 
 
-const Date = ({ date }) => {
+const DateComponent = ({ date }) => {
     return <>
         <div className="date">
             <Header
@@ -92,12 +95,12 @@ const Date = ({ date }) => {
 
 
 export const Calendar = () => {
-    const dateState = useSelector(store => store.calendarReducer);
+    const dateState = useSelector(store => store.calendar_reducer);
 
 
     return (
         <div className="calendar_wrapp">
-            <Date date={dateState} />
+            <DateComponent date={dateState} />
             <Month date={dateState} />
             <Years date={dateState} />
         </div>

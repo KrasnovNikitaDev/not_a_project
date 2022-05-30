@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "name": "nikita",
+      "mail": "nik@mail.ru",
+      "password": "1232",
+      "id": 1
+    },
+    {
+      "name": "user",
+      "mail": "user@mail.com",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "user": "user@mail.com",
+      "list": [
+        {
+          "done": false,
+          "date": "28.05.2022",
+          "value": "user name USER task for today"
+        }
+      ]
+    },
+    {
+      "user": "nik@mail.ru",
+      "list": [
+        {
+          "done": true,
+          "date": "28.05.2022",
+          "value": "User name Nikita, task done"
+        },
+        {
+          "done": false,
+          "date": "30.05.2022",
+          "value": "User name Nikita, task for today"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+@mixin active_btn($color){
+    display: grid;
+    place-items: center;
+    width: 100px;
+    min-width: max-content;
+    height: 40px;
+    background-color: $color;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.27);
+    padding: 0 10px;
+    &:hover {
+        cursor: pointer;
+        color: white;
+    }
+    &:active{
+        box-shadow: none;
+    }
+}
+
+
+.list_wrapper {
+    padding: 0 10px;
+
+    .list {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100vh;
+        background-color: red;
+        border-radius: 10px;
+        padding: 10px;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: inherit;
+            gap: 10px;
+            height: 50px;
+
+            .list_nav {
+                display: flex;
+                gap: 10px;
+
+                ._task {
+                    @include active_btn(blue)
+                }
+
+            }
+
+            .add {
+                @include active_btn(green);
+                font-size: 30px;
+            }
+        }
+    }
+}

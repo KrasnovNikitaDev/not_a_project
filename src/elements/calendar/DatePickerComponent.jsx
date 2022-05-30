@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import * as helper from './render_elememts_for_calendar.js';
 import { useDispatch, useSelector } from "react-redux";
+import { Routes, Route, Link, useLocation, useParams, Outlet, useOutletContext, useSearchParams } from "react-router-dom";
 
 
 const Elem = ({ classN, data, fn }) => {
-
-    const selectElem = (e) => fn(e, data.v);
+    const selectElem = (e) => {
+        fn(e, data.v);
+    }
+    
+    
 
     return (
-        <div
+        <Link
             className={classN}
-            onClick={data ? selectElem : () => false}>{data.v}
-        </div>
+            onClick={data ? selectElem : () => false}
+            to={`?date=${data.link_params}`}
+        >{data.v}
+        </Link>
     )
 }
 
@@ -31,11 +37,11 @@ export const DataPicker = ({ date }) => {
     const selectDate = (e, n) => {
         let target = (value) => e.target.className.split(' ').includes(value);
 
-       target('month_date') && helper.set_date(e, n, dispatch);
+        target('month_date') && helper.set_date(e, n, dispatch);
 
-       target('prev_month_date') && helper.set_date_prev_next_month('prev', n, dispatch);
+        target('prev_month_date') && helper.set_date_prev_next_month('prev', n, dispatch);
 
-       target('next_month_date') && helper.set_date_prev_next_month('next', n, dispatch);
+        target('next_month_date') && helper.set_date_prev_next_month('next', n, dispatch);
     }
 
     return <div className="month_dates">

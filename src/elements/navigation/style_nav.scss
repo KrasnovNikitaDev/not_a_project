@@ -1,0 +1,83 @@
+$width: 250px;
+
+
+
+
+.navigation {
+    width: $width;
+    height: 100vh;
+    background-color: red;
+    border-radius: 0 10px 10px 0;
+    padding: 50px 0;
+    color: white;
+
+}
+
+.user {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white;
+
+
+    .avatar {
+        width: calc($width - 150px);
+        height: calc($width - 150px);
+        border-radius: 50%;
+        background-image: url('../../avatar-g5cd60da16_640.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    margin-bottom: 50px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-left: 20px;
+
+    a {
+        color: white;
+
+        h5 {
+            &:hover {
+                cursor: pointer;
+                color: blue;
+            }
+        }
+    }
+
+}
+
+.logout {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: inherit;
+
+    .icon {
+        width: 30px;
+        height: 30px;
+        background: url('../../premium-icon-log-out-143310.png') center no-repeat;
+        background-size: contain;
+    }
+
+    
+    &:hover {
+        cursor: pointer;
+        h6 {
+            // color: white;
+            color: blue;
+        }
+    }
+
+}

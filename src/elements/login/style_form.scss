@@ -1,0 +1,27 @@
+.form_block {
+    width: 350px;
+    height: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: wheat;
+
+    form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+
+        .form_buttons{
+            display: flex;
+            justify-content: space-between;
+            h6{
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
