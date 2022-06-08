@@ -5,14 +5,12 @@ import './style_form.scss';
 import { Signin } from './Signin.jsx';
 import * as helper from './helpers.js'
 import { useDispatch, useSelector } from 'react-redux';
-// import { DevTool } from "@hookform/devtools";
+import { useSearchParams } from "react-router-dom";
 
 
 
 const Buttons = ({ login, changeState }) => {
     const setForm = () => changeState();
-
-
 
     return <div className="form_buttons">
         {login ? <h6 onClick={setForm}>Регистрация</h6> : <h6 onClick={setForm}>Аторизация</h6>}
@@ -25,11 +23,15 @@ const Buttons = ({ login, changeState }) => {
 
 export const Form = ({ setLoginFunction }) => {
     const [state, setstate] = useState(true);
+    const [searchParams, setSearchParams] = useSearchParams();
     const methods = useForm();
     const dispatch = useDispatch();
 
     const submit = (value) => {
-        if (state) helper.get_user(value, setLoginFunction, methods, dispatch);
+        if (state) {
+            helper.logIn_user(value, setLoginFunction, methods, dispatch);
+            setSearchParams({date: new Date().toLocaleDateString()})
+        }
         else helper.auth_user(value, setLoginFunction, methods, dispatch);
     }
 
@@ -48,8 +50,6 @@ export const Form = ({ setLoginFunction }) => {
                     changeState={changeState}
                 />
             </form>
-
-            {/* <DevTool control={methods.control} /> */}
         </FormProvider>
     </div>
 }

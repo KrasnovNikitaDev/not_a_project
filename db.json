@@ -15,29 +15,25 @@
   ],
   "tasks": [
     {
+      "id": 1,
       "user": "user@mail.com",
-      "list": [
-        {
-          "done": false,
-          "date": "28.05.2022",
-          "value": "user name USER task for today"
+      "list": {
+        "08.06.2022": {
+          "task_list": [
+            {
+              "key": "ICCR99BANCYKLRA",
+              "value": "Привет мир",
+              "done": false
+            }
+          ],
+          "done_task_list": []
         }
-      ]
+      }
     },
     {
+      "id": 2,
       "user": "nik@mail.ru",
-      "list": [
-        {
-          "done": true,
-          "date": "28.05.2022",
-          "value": "User name Nikita, task done"
-        },
-        {
-          "done": false,
-          "date": "30.05.2022",
-          "value": "User name Nikita, task for today"
-        }
-      ]
+      "list": {}
     }
   ]
 }

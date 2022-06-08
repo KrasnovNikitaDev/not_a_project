@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { USER } from "../../store/action.js";
+import { USER_GET_TASKS } from "../../store/action.js";
 
 
 export const required = (msg) => ({
@@ -9,7 +9,7 @@ export const required = (msg) => ({
 
 
 
-export const get_user = (value, fn, methods, dispatch) => {
+export const logIn_user = (value, fn, methods, dispatch) => {
     axios({
         method: "get",
         url: `http://localhost:3000/users?mail=${value.mail}`
@@ -22,7 +22,7 @@ export const get_user = (value, fn, methods, dispatch) => {
         .then(user => {
             if (user.password === value.password) {
                 localStorage.setItem('login', JSON.stringify({ name: user.name, mail: user.mail }));
-                dispatch(USER(user))
+                dispatch(USER_GET_TASKS(user))
                 fn();
             } else {
                 methods.setError('password', { type: 'custom', message: 'пароль не верный' })
@@ -56,7 +56,7 @@ function add_user_to_db(user, fn, dispatch) {
     })
         .then(response => {
             localStorage.setItem('login', JSON.stringify({ name: user.name, mail: user.mail }));
-            dispatch(USER(response))
+            dispatch(USER_GET_TASKS(response))
             fn();
         })
 }

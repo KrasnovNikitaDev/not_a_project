@@ -3,7 +3,7 @@ import './style_nav.scss'
 import { User } from './User.jsx';
 import { Nav } from "./Nav.jsx";
 import { Logout } from './Logout.jsx'
-import { USER } from "../../store/action.js";
+import { USER_GET_TASKS } from "../../store/action.js";
 import { useDispatch } from 'react-redux';
 
 export const Navigation = ({ fn }) => {
@@ -13,7 +13,7 @@ export const Navigation = ({ fn }) => {
     useEffect(
         () => {
             let user = localStorage.getItem('login');
-            user && dispatch(USER(JSON.parse(user)));
+            user && dispatch(USER_GET_TASKS(JSON.parse(user)));
         }
     , [])
 

@@ -6,7 +6,9 @@ import { Navigation } from "./elements/navigation/Navigation.jsx";
 import { Form } from "./elements/login/Form.jsx";
 import { ToDOList } from "./elements/toDoList/List.jsx";
 import { List } from "./elements/toDoList/List.jsx";
-import { useSelector } from "react-redux";
+import { LIST } from "./LIST.jsx";
+
+
 
 
 const Modal = ({ fn }) => {
@@ -17,6 +19,8 @@ const Modal = ({ fn }) => {
         , document.querySelector('#modal'))
 }
 
+
+
 const Main = () => {
     return <main>
         <ToDOList />
@@ -25,13 +29,15 @@ const Main = () => {
 }
 
 
+
+
 export default function App() {
     const isLogin = localStorage.getItem('login') ? true : false;
-    const [login, setLogin] = useState(isLogin);
-    const handleLogin = () => setLogin(() => localStorage.getItem('login') ? true : false);
-    const date = useSelector(({calendar_reducer}) => calendar_reducer.date);
-    const navigate = useNavigate();
 
+    const [login, setLogin] = useState(isLogin);
+    
+    const handleLogin = () => setLogin(() => localStorage.getItem('login') ? true : false);
+    
     return <>
         <div>
             <Navigation fn={handleLogin} />
@@ -40,9 +46,9 @@ export default function App() {
             <Route path='/' element={<Main />} >
                 <Route path="/"  element={<List />} />
                 <Route path="done" element={<List />} />
-                <Route path="all" element={<List />} />
+                {/* <Route path="all" element={<List />} /> */}
             </Route>
-            <Route path="dashboard" />
+            <Route path="dashboard" element={<LIST />}/>
         </Routes>
         {login || <Modal fn={handleLogin} />}
     </>

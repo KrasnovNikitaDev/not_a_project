@@ -1,4 +1,4 @@
-@mixin active_btn($color){
+@mixin active_btn($color) {
     display: grid;
     place-items: center;
     width: 100px;
@@ -9,11 +9,13 @@
     color: black;
     box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.27);
     padding: 0 10px;
+
     &:hover {
         cursor: pointer;
         color: white;
     }
-    &:active{
+
+    &:active {
         box-shadow: none;
     }
 }
@@ -54,6 +56,73 @@
                 @include active_btn(green);
                 font-size: 30px;
             }
+        }
+
+        main {
+            display: flex !important;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 30px;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                list-style: none;
+            }
+
+            .task {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: green;
+                width: 500px;
+                overflow: auto;
+                min-height: 40px;
+                height: max-content;
+                font-size: 20px;
+                padding: 0 10px;
+
+                &:hover {
+                    cursor: grab;
+                }
+
+                .delete_task {
+                    width: 25px;
+                    height: 25px;
+                    background-color: blue;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                input{
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.add_task_area {
+    width: 50%;
+    min-width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+
+    form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        button {
+            text-transform: uppercase;
         }
     }
 }
