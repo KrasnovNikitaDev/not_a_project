@@ -8,7 +8,6 @@ import * as helpers from './functions.js';
 import * as actions from '../../store/action.js'
 import { useForm } from "react-hook-form";
 
-// refactoring ADD in taskform component!!!
 
 const TaskForm = ({ hide }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -97,21 +96,17 @@ export const List = () => {
 
 
 const Header = () => {
-    const dispatch = useDispatch();
+    const [modal, setModal] = useState(false);
+    
     const today = useSelector(({ calendar_reducer }) => calendar_reducer.date);
-    const [modal, setModal] = useState(false)
-    const user = JSON.parse(localStorage.getItem('login'));
-    const location = useLocation();
 
     const show_modal_add = () => setModal(state => !state);
-    const add_task = () => dispatch(actions.ADD_TASK(user, task, location));
 
     return <>
         <header>
             <div className="list_nav">
                 <div className="active_task _task"><Link to={`/?date=${today}`}>ЗАДАЧИ НА СЕГОДНЯ</Link></div>
                 <div className="done_task _task"><Link to={`done?date=${today}`}>ВЫПОЛНЕННЫЕ НА СЕГОДНЯ</Link></div>
-                {/* <div className="all_task _task"><Link to={`all?date=${today}`}>ВСЕ ЗАДАЧИ</Link></div> */}
             </div>
             <div className="add" onClick={show_modal_add}>+</div>
         </header>

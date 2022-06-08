@@ -17,18 +17,7 @@
     {
       "id": 1,
       "user": "user@mail.com",
-      "list": {
-        "08.06.2022": {
-          "task_list": [
-            {
-              "key": "ICCR99BANCYKLRA",
-              "value": "Привет мир",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        }
-      }
+      "list": {}
     },
     {
       "id": 2,

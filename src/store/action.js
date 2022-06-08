@@ -129,8 +129,26 @@ function handele_list_action(target, param, mail, value) {
                     break;
             }
 
-            axios.put(`http://localhost:3000/tasks/${id}`,
-                {
+            axios.put(`http://localhost:3000/tasks/${id}`, 
+                create_object(id, user, list, task_list, done_task_list))
+        })
+
+
+
+        function create_object(id, user, list, task_list, done_task_list){
+            if (task_list.length === 0 && done_task_list.length === 0){
+                delete list[param];
+                
+                return ({
+                    id,
+                    user,
+                    list: {
+                        ...list,
+                    }
+                })
+            }
+
+            return ({
                     id,
                     user,
                     list: {
@@ -141,5 +159,5 @@ function handele_list_action(target, param, mail, value) {
                         }
                     }
                 })
-        })
+        }
 }
