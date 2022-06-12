@@ -11,6 +11,6 @@ export const Logout = ({logoutFunction}) => {
 
     return <div className="logout" onClick={logout}>
         <div className="icon"></div>
-        <h6>ВЫХОД</h6>
+        <h5>ВЫХОД</h5>
     </div>
 }

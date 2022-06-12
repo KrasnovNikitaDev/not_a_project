@@ -3,6 +3,7 @@ $main_height: 420px;
 $radius: 10px;
 $tarsition: 300ms;
 
+
 @mixin date_elem {
     width: 50px;
     height: 45px;
@@ -38,7 +39,7 @@ $tarsition: 300ms;
     height: $main_height;
     border-radius: $radius;
     padding: 10px;
-    background-color: red;
+    margin-right: 10px;
     overflow: hidden;
     grid-column: 2/3;
 
@@ -49,29 +50,15 @@ $tarsition: 300ms;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        padding: 0px 10px;
 
         .arrows {
             display: flex;
             justify-content: space-between;
             width: 50px;
-
-            h2:hover {
-                @include hover_effect(white)
-            }
         }
 
-        .date_title {
-            &:hover {
-                @include hover_effect(white)
-            }
-        }
-
-        .back_today {
-            margin-top: 5px;
-            &:hover {
-                @include hover_effect(orange)
-            }
-        }
+        
     }
 
     .emty {
@@ -123,25 +110,8 @@ $tarsition: 300ms;
 
                     .data_elem {
                         @include date_elem();
-                        background-color: rgb(189, 10, 10);
-                        font-weight: bold;
-                    }
-
-                    .prev_month_date,
-                    .next_month_date {
-                        color: gray !important;
-
-                        &:hover {
-                            color: rgb(228, 176, 176) !important;
-
-                        }
-                    }
-
-                    .data_elem:hover {
-                        @include hover_effect(white);
 
                     }
-
                     .today {
                         background-color: blue;
                     }
@@ -179,7 +149,7 @@ $tarsition: 300ms;
 
             .data_elem {
                 &:hover {
-                    cursor: pointer;
+                    @include hover_effect(white);
                 }
             }
         }
@@ -213,7 +183,8 @@ $tarsition: 300ms;
 
             .data_elem {
                 &:hover {
-                    cursor: pointer;
+                    @include hover_effect(white);
+
                 }
             }
         }

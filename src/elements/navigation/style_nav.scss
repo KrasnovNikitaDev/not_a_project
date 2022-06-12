@@ -1,30 +1,26 @@
-$width: 250px;
-
+$width: 350px;
 
 
 
 .navigation {
+    position: relative;
     width: $width;
     height: 100vh;
-    background-color: red;
+    min-height: 500px;
     border-radius: 0 10px 10px 0;
-    padding: 50px 0;
-    color: white;
+    padding: 25px 25px 25px 40px;
 
 }
 
 .user {
     position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 10px;
-    color: white;
-
+    gap: 20px;
 
     .avatar {
-        width: calc($width - 150px);
-        height: calc($width - 150px);
+        width: calc($width - 300px);
+        height: calc($width - 300px);
         border-radius: 50%;
         background-image: url('../../avatar-g5cd60da16_640.png');
         background-size: contain;
@@ -32,36 +28,37 @@ $width: 250px;
         background-position: center;
     }
 
-    margin-bottom: 50px;
+    h3 {
+        height: 23px;
+    }
 }
+
+hr {
+    margin: 25px 0px;
+    opacity: .4;
+}
+
 
 nav {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 50px;
-    padding-left: 20px;
+    align-items: flex-start;
 
     a {
-        color: white;
-
-        h5 {
-            &:hover {
-                cursor: pointer;
-                color: blue;
-            }
-        }
+        height: 27px;
+        text-decoration: none;
+        text-transform: uppercase;
     }
-
 }
 
 .logout {
     position: absolute;
     bottom: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     width: inherit;
 
     .icon {
@@ -71,13 +68,24 @@ nav {
         background-size: contain;
     }
 
-    
+
     &:hover {
         cursor: pointer;
+
         h6 {
-            // color: white;
             color: blue;
         }
     }
 
+}
+
+
+.mode_switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    h5 {
+        text-transform: uppercase;
+    }
 }

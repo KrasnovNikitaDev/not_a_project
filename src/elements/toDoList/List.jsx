@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { Reorder } from "framer-motion"
@@ -7,6 +7,8 @@ import { Link, useLocation, Outlet, useOutletContext, useSearchParams } from "re
 import * as helpers from './functions.js';
 import * as actions from '../../store/action.js'
 import { useForm } from "react-hook-form";
+import { ThemeContext } from "../../App.jsx";
+import { useRef } from 'react';
 
 
 const TaskForm = ({ hide }) => {
@@ -46,7 +48,7 @@ const TaskForm = ({ hide }) => {
 }
 
 
-const Task = ({elem, task, user, param }) => {
+const Task = ({ elem, task, user, param }) => {
     const dispatch = useDispatch();
 
     const check = (e) => {
@@ -61,6 +63,7 @@ const Task = ({elem, task, user, param }) => {
     return <Reorder.Item value={elem} key={elem.key} className="task">
         <input type="checkbox" checked={task.done} name="" id="" onChange={check} />
         <p>{task.value}</p>
+        <div className='eddit_task' ></div>
         <div className='delete_task' onClick={del}></div>
     </Reorder.Item>
 }
@@ -73,7 +76,7 @@ export const List = () => {
     const location = useLocation();
 
     useEffect(
-        () => setstate(() => helpers.set_toDoList( location, param, list))
+        () => setstate(() => helpers.set_toDoList(location, param, list))
         , [list, location])
 
     const x = (e) => {
@@ -97,16 +100,34 @@ export const List = () => {
 
 const Header = () => {
     const [modal, setModal] = useState(false);
-    
+    const active = useRef(null);
+    const done = useRef(null);
+
     const today = useSelector(({ calendar_reducer }) => calendar_reducer.date);
 
     const show_modal_add = () => setModal(state => !state);
 
+    const underline = ({ target }) => {
+        active.current.classList.remove('underline');
+        done.current.classList.remove('underline');
+        target.classList.add('underline');
+    }
+
     return <>
         <header>
             <div className="list_nav">
-                <div className="active_task _task"><Link to={`/?date=${today}`}>ЗАДАЧИ НА СЕГОДНЯ</Link></div>
-                <div className="done_task _task"><Link to={`done?date=${today}`}>ВЫПОЛНЕННЫЕ НА СЕГОДНЯ</Link></div>
+                <Link
+                    className="active_task _task underline"
+                    to={`/?date=${today}`}
+                    onClick={underline}
+                    ref={active}
+                >ЗАДАЧИ НА СЕГОДНЯ</Link>
+                <Link
+                    className="done_task _task"
+                    to={`done?date=${today}`}
+                    onClick={underline}
+                    ref={done}
+                >ВЫПОЛНЕННЫЕ НА СЕГОДНЯ</Link>
             </div>
             <div className="add" onClick={show_modal_add}>+</div>
         </header>
@@ -124,13 +145,14 @@ const Header = () => {
 
 
 export const ToDOList = () => {
+    const theme = useContext(ThemeContext);
     const { list, user } = useSelector(store => store.user_reducer);
     const [searchParams] = useSearchParams();
     const param = searchParams.get('date');
 
 
-    return <div className='list_wrapper'>
-        <div className="list">
+    return <div className="list_wrapper">
+        <div className={"list " + theme}>
             <Header />
             <Outlet context={[list, user, param]} />
         </div>

@@ -1,4 +1,4 @@
-import React, {memo} from "react";
+import React, { memo, useContext } from "react";
 import './style_calendar.scss';
 import { useSelector, useDispatch } from "react-redux";
 import * as helper from './render_elememts_for_calendar.js';
@@ -6,19 +6,27 @@ import { WeekDays, DataPicker } from "./DatePickerComponent.jsx";
 import { MonthPicker } from "./MonthPickerComponent.jsx";
 import { YearPicker } from "./YearPickerComponent.jsx";
 import * as action from '../../store/action.js';
-import { Routes, Route, Link, useLocation, useParams, Outlet, useOutletContext, useSearchParams} from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { ThemeContext } from "../../App.jsx";
 
 
 const Header = ({ date, month, year }) => {
     const dispatch = useDispatch();
-    
+    const [searchParams, setSearchParams] = useSearchParams();
+
+
+
     const selectMonth = () => helper.set_date_picker('month-next');
     const selectYear = () => helper.set_date_picker('year-next');
 
     const prev = () => helper.prevArrow(dispatch, month, year);
     const next = () => helper.nextArrow(dispatch, month, year);
 
-    const set_today = () => dispatch(action.SET_TODAY)
+    const set_today = () => {
+        dispatch(action.SET_TODAY);
+        setSearchParams({ date: new Date().toLocaleDateString() })
+    }
+
 
     return (
         <header>
@@ -30,11 +38,9 @@ const Header = ({ date, month, year }) => {
                 }
                 {
                     date && <h5 className="back_today" onClick={set_today}>
-                        <Link to={`/?date=${new Date().toLocaleDateString()}`}>
-                            {helper.currentDate + ' '}
-                            {helper.array_of_month_for_date[helper.currentMonth] + ' '}
-                            {helper.currentYear}
-                        </Link>
+                        {helper.currentDate + ' '}
+                        {helper.array_of_month_for_date[helper.currentMonth] + ' '}
+                        {helper.currentYear}
                     </h5>
                 }
             </div>
@@ -96,10 +102,11 @@ const DateComponent = ({ date }) => {
 
 export const Calendar = () => {
     const dateState = useSelector(store => store.calendar_reducer);
+    const theme = useContext(ThemeContext);
 
 
     return (
-        <div className="calendar_wrapp">
+        <div className={"calendar_wrapp " + theme}>
             <DateComponent date={dateState} />
             <Month date={dateState} />
             <Years date={dateState} />

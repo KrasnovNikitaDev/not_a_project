@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useRef } from "react";
 import './style_nav.scss';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 
 export const Nav = () => {
-    const today = useSelector(({calendar_reducer}) => calendar_reducer.date);
-
+    const list = useRef(null);
+    const dashboard = useRef(null);
+    const today = useSelector(({ calendar_reducer }) => calendar_reducer.date);
+    
+    const underline = ({ target }) => {
+        list.current.classList.remove('underline');
+        dashboard.current.classList.remove('underline');
+        target.classList.add('underline');
+    }
+    
     return <nav>
-        <Link to={`/?date=${today}`}>
-            <h5>TO DO LIST</h5>
-        </Link>
-        <Link to="/dashboard">
-            <h5>DASHBOARD</h5>
-        </Link>
+        <Link
+            to={`/?date=${today}`}
+            className="underline"
+            onClick={underline}
+            ref={list}
+        >ежедневник</Link>
+        <Link
+            to="/dashboard"
+            onClick={underline}
+            ref={dashboard}
+        >панель управления</Link>
     </nav>
 }

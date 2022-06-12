@@ -1,3 +1,14 @@
+$color_dark_theme: rgb(221, 201, 201);
+$color_light_theme: rgb(224, 216, 216);
+
+
+@mixin hover_effect ($color) {
+    cursor: pointer;
+    color: $color !important;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,14 +19,12 @@
 #root {
     display: flex;
 
-    main{
+    main {
         flex: 1;
 
         display: grid;
         grid-template-columns: 1fr min-content;
         height: 100vh;
-        // place-items: center;
-
     }
 }
 
@@ -32,5 +41,122 @@
         backdrop-filter: blur(10px);
         display: grid;
         place-items: center;
+    }
+}
+
+
+.dark {
+    background-color: #2a2834 !important;
+    color: $color_dark_theme !important;
+
+
+    .arrows {
+        h2:hover {
+            @include hover_effect(white);
+        }
+    }
+
+    .date_title {
+        &:hover {
+            @include hover_effect(white)
+        }
+    }
+
+    .back_today {
+        margin-top: 5px;
+
+        &:hover {
+            @include hover_effect(white)
+        }
+    }
+
+
+    .data_elem {
+        color: $color_dark_theme;
+
+        &:hover {
+            @include hover_effect(white);
+        }
+    }
+
+    .prev_month_date,
+    .next_month_date {
+        color: gray !important;
+
+        &:hover {
+            color: rgb(228, 176, 176) !important;
+
+        }
+    }
+
+    ._task {
+        color: $color_dark_theme !important;
+
+        &:hover{
+            @include hover_effect(white);
+        }
+    }
+
+    .underline {
+        border-bottom: 2px solid $color_dark_theme
+    }
+    .task{
+        &:hover{
+            @include hover_effect(white);
+        }
+    }
+
+
+    nav{
+        a{
+            color: $color_dark_theme;
+            &:hover{
+                @include hover_effect(white);
+            }
+        }
+    }
+
+}
+
+.light {
+    background-color: rgb(224, 210, 210) !important;
+
+    .arrows {
+        h2:hover {
+            @include hover_effect(white);
+        }
+    }
+
+    .date_title {
+        &:hover {
+            @include hover_effect(white)
+        }
+    }
+
+    .back_today {
+        margin-top: 5px;
+
+        &:hover {
+            @include hover_effect(white)
+        }
+    }
+
+
+    .data_elem {
+        // color: $color;
+
+        &:hover {
+            @include hover_effect(white);
+        }
+    }
+
+    .prev_month_date,
+    .next_month_date {
+        color: gray !important;
+
+        &:hover {
+            color: rgb(228, 176, 176) !important;
+
+        }
     }
 }

@@ -5,11 +5,11 @@ import { useSelector } from 'react-redux';
 
 
 export const User = () => {
-    const user = useSelector(store => store.user_reducer.user);
+    const { name } = useSelector(store => store.user_reducer.user);
 
     return <div className="user">
         <div className="avatar"></div>
-        <h3>{user.mail}</h3>
+        { <h3>{name}</h3> || <h3 style={{ opacity: "0" }}>hidden</h3>}
     </div>
 }
 
