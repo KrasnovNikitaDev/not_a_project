@@ -14,6 +14,10 @@ export const SET_TODAY = { type: "SET-TODAY" };
 
 
 
+
+
+
+
 export const USER_GET_TASKS = ({name, mail}) => (dispatch) => {
     axios.get(`http://localhost:3000/tasks?user=${mail}`)
         .then(res => res.data[0])

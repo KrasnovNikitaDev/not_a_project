@@ -1,16 +1,16 @@
 {
   "users": [
     {
-      "name": "nikita",
-      "mail": "nik@mail.ru",
-      "password": "1232",
-      "id": 1
-    },
-    {
       "name": "user",
       "mail": "user@mail.com",
       "password": "123",
       "id": 2
+    },
+    {
+      "name": "new user",
+      "mail": "new_user@mail.com",
+      "password": "password",
+      "id": 3
     }
   ],
   "tasks": [
@@ -26,18 +26,12 @@
               "done": false
             },
             {
-              "key": "FYZZDN9TAQDL4QI",
-              "value": "новая задача",
+              "key": "29CWK7W6UEW5WNR",
+              "value": "Привет мир",
               "done": false
             }
           ],
-          "done_task_list": [
-            {
-              "key": "29CWK7W6UEW5WNR",
-              "value": "Привет мир",
-              "done": true
-            }
-          ]
+          "done_task_list": []
         },
         "01.07.2022": {
           "task_list": [
@@ -62,8 +56,8 @@
       }
     },
     {
-      "id": 2,
-      "user": "nik@mail.ru",
+      "id": 3,
+      "user": "new_user@mail.com",
       "list": {}
     }
   ]

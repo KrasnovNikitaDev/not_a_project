@@ -12,7 +12,6 @@ const user_state = {
 export function user_reducer(state = user_state, action) {
     switch (action.type) {
         case "USER-GET-TASKS": return {
-            ...state,
             user: action.user,
             list: {
                 ...action.list
