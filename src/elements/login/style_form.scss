@@ -40,7 +40,7 @@ $bgc: rgb(236, 231, 221);
                 align-self: center;
                 width: 0%;
                 box-sizing: border-box;
-                height: 2px;
+                height: 1px;
             }
             .anime_line{
                 transition: .3s;
@@ -60,8 +60,8 @@ $bgc: rgb(236, 231, 221);
             align-items: flex-end;
 
             button {
-                padding: 5px 10px;
-                background-color: rgb(11, 167, 11);
+                padding: 10px 25px;
+                background-color: blue;
                 border: none;
                 border-radius: 5px;
 

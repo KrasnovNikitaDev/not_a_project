@@ -1,0 +1,94 @@
+$color_light_theme: rgb(23, 55, 94);
+$hover_light: rgb(34, 32, 32);
+
+
+@mixin hover_effect ($color) {
+    cursor: pointer;
+    color: $color !important;
+}
+
+
+.light {
+    background-color: rgb(245, 237, 237) !important;
+    color: $color_light_theme !important;
+
+
+    .arrows {
+        h2:hover {
+            @include hover_effect($hover_light);
+        }
+    }
+
+    .date_title {
+        &:hover {
+            @include hover_effect($hover_light)
+        }
+    }
+
+    .back_today {
+        margin-top: 5px;
+
+        &:hover {
+            @include hover_effect($hover_light)
+        }
+    }
+
+
+    .data_elem {
+        color: $color_light_theme;
+
+        &:hover {
+            @include hover_effect($hover_light);
+        }
+    }
+
+    .prev_month_date,
+    .next_month_date {
+        color: gray !important;
+
+        &:hover {
+            color: $hover_light !important;
+
+        }
+    }
+
+    ._task {
+        color: $color_light_theme !important;
+
+        &:hover{
+            @include hover_effect($hover_light);
+        }
+    }
+
+    .underline {
+        border-bottom: 2px solid $color_light_theme
+    }
+    .task{
+        &:hover{
+            @include hover_effect($hover_light);
+        }
+        .delete_task{
+            background-image: url('../images/delete-light-theme.png') !important;
+        } 
+        .eddit_task{
+            background-image: url('../images/edit-light-theme.png') !important;
+        }
+    }
+
+    nav{
+        a{
+            color: $color_light_theme;
+            &:hover{
+                @include hover_effect($hover_light);
+            }
+        }
+    }
+
+    .logout, .mode_switcher{
+        &:hover{
+            @include hover_effect($hover_light);
+        }
+    }
+    
+
+}

@@ -27,6 +27,7 @@
         display: flex;
         flex-direction: column;
 
+
         width: 100%;
         height: 100vh;
         border-radius: 10px;
@@ -64,12 +65,15 @@
             flex-direction: column;
             gap: 5px;
             margin-top: 30px;
+            background-color: inherit;
 
             ul {
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
                 list-style: none;
+                background-color: inherit;
+
             }
 
             .task {
@@ -79,9 +83,12 @@
                 overflow: auto;
                 min-height: 40px;
                 height: max-content;
-
+                
+                
                 &:hover {
                     cursor: grab;
+                    background-color: inherit;
+                    box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.39);
                 }
                 &:active{
                     cursor: grabbing;
@@ -96,7 +103,7 @@
                     flex: 1;
                     width: 27px;
                     height: 27px;
-                    background-image: url("../../delete.png");
+                    background-image: url("../../assets/images/delete.png");
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
@@ -108,7 +115,7 @@
 
                 .eddit_task {
                     margin-right: 30px;
-                    background-image: url("../../edit.png");
+                    background-image: url("../../assets/images/edit.png");
                 }
 
                 input {

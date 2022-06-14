@@ -4,7 +4,9 @@ import App from './App.jsx';
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from './store/store.js'
-import './style.scss';
+import './assets/global_styles/style.scss';
+import './assets/global_styles/darkTheme.scss';
+import './assets/global_styles/lightTheme.scss';
 
 
 ReactDOM.render(
