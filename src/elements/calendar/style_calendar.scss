@@ -214,3 +214,17 @@ $tarsition: 300ms;
     opacity: 0 !important;
     transform: scale(.5) !important;
 }
+
+
+
+
+@media screen and (max-width: 1050px) {
+    .calendar_wrapp {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        margin: 0 10px;
+        width: calc(100% - 10px)
+        
+        
+    }
+}

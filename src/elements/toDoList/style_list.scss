@@ -21,17 +21,16 @@
 
 
 .list_wrapper {
-    padding: 0 10px;
+    margin: 0 10px;
 
     .list {
         display: flex;
         flex-direction: column;
-
-
         width: 100%;
         height: 100vh;
         border-radius: 10px;
         padding: 10px 20px;
+
 
         header {
             display: flex;
@@ -45,7 +44,7 @@
                 display: flex;
                 gap: 20px;
 
-                ._task {
+                a{
                     display: grid;
                     place-items: center;
                     min-width: max-content;
@@ -66,6 +65,7 @@
             gap: 5px;
             margin-top: 30px;
             background-color: inherit;
+            overflow-y: scroll;
 
             ul {
                 display: flex;
@@ -83,23 +83,26 @@
                 overflow: auto;
                 min-height: 40px;
                 height: max-content;
-                
-                
+
+
                 &:hover {
                     cursor: grab;
                     background-color: inherit;
                     box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.39);
                 }
-                &:active{
+
+                &:active {
                     cursor: grabbing;
                 }
-                p{
+
+                p {
                     flex: 20;
                     font-size: 20px;
                     margin-left: 20px;
                 }
 
-                .delete_task, .eddit_task {
+                .delete_task,
+                .eddit_task {
                     flex: 1;
                     width: 27px;
                     height: 27px;
@@ -152,5 +155,19 @@
         button {
             text-transform: uppercase;
         }
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    .list_wrapper {
+        grid-row: 2/3;
+        margin: 0 10px;
+        width: calc(100% - 10px);
+
+        .list {
+            height: calc(100vh - 430px);
+        }
+
     }
 }

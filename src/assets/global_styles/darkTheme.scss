@@ -53,32 +53,35 @@ $color_dark_theme: rgb(221, 201, 201);
     ._task {
         color: $color_dark_theme !important;
 
-        &:hover{
+        &:hover {
             @include hover_effect(white);
         }
     }
 
-    .underline {
+    .active_link {
         border-bottom: 2px solid $color_dark_theme
     }
-    .task{
-        &:hover{
+
+    .task {
+        &:hover {
             @include hover_effect(white);
         }
     }
 
 
-    nav{
-        a{
+    nav {
+        a {
             color: $color_dark_theme;
-            &:hover{
+
+            &:hover {
                 @include hover_effect(white);
             }
         }
     }
 
-    .logout, .mode_switcher{
-        &:hover{
+    .logout,
+    .mode_switcher {
+        &:hover {
             @include hover_effect(white);
         }
     }

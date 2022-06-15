@@ -100,37 +100,31 @@ export const List = () => {
 
 const Header = () => {
     const [modal, setModal] = useState(false);
-    const active = useRef(null);
-    const done = useRef(null);
+    const { pathname } = useLocation();
 
     const today = useSelector(({ calendar_reducer }) => calendar_reducer.date);
 
     const show_modal_add = () => setModal(state => !state);
 
-    const underline = ({ target }) => {
-        active.current.classList.remove('underline');
-        done.current.classList.remove('underline');
-        target.classList.add('underline');
-    }
+    useEffect(
+        () => {
+            let links = document.querySelectorAll('.list_nav a');
+            links.forEach(elem => {
+                elem.classList.remove('active_link');
+                if (elem.pathname === pathname) elem.classList.add('active_link');
+            })
+        }
+    )
 
     return <>
         <header>
             <div className="list_nav">
-                <Link
-                    className="active_task _task underline"
-                    to={`/?date=${today}`}
-                    onClick={underline}
-                    ref={active}
-                >ЗАДАЧИ НА СЕГОДНЯ</Link>
-                <Link
-                    className="done_task _task"
-                    to={`done?date=${today}`}
-                    onClick={underline}
-                    ref={done}
-                >ВЫПОЛНЕННЫЕ НА СЕГОДНЯ</Link>
+                <Link to={`/?date=${today}`}>ЗАДАЧИ НА СЕГОДНЯ</Link>
+                <Link to={`done?date=${today}`}>ВЫПОЛНЕННЫЕ НА СЕГОДНЯ</Link>
             </div>
             <div className="add" onClick={show_modal_add}>+</div>
         </header>
+        
         {
             modal && ReactDOM.createPortal(
                 <div className="modal_wrapper">

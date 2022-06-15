@@ -1,8 +1,11 @@
 import React from "react";
 import './style_nav.scss';
+import { useMediaQuery } from "react-responsive";
 
 
-export const Logout = ({logoutFunction}) => {
+export const Logout = ({ logoutFunction }) => {
+    const isSmallMonitor = useMediaQuery({ minWidth: 1300 });
+
 
     const logout = (e) => {
         localStorage.removeItem('login');
@@ -11,6 +14,6 @@ export const Logout = ({logoutFunction}) => {
 
     return <div className="logout" onClick={logout}>
         <div className="icon"></div>
-        <h5>ВЫХОД</h5>
+        { isSmallMonitor && <h5>ВЫХОД</h5> } 
     </div>
 }

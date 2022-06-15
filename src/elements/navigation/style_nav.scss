@@ -1,5 +1,4 @@
-$width: 350px;
-
+$width: 300px;
 
 
 .navigation {
@@ -19,8 +18,8 @@ $width: 350px;
     gap: 20px;
 
     .avatar {
-        width: calc($width - 300px);
-        height: calc($width - 300px);
+        width: calc($width - 250px);
+        height: calc($width - 250px);
         border-radius: 50%;
         background-image: url('../../assets/images/avatar-g5cd60da16_640.png');
         background-size: contain;

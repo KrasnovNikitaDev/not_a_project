@@ -6,7 +6,6 @@ import { Navigation } from "./elements/navigation/Navigation.jsx";
 import { Form } from "./elements/login/Form.jsx";
 import { ToDOList } from "./elements/toDoList/List.jsx";
 import { List } from "./elements/toDoList/List.jsx";
-import { LIST } from "./LIST.jsx";
 import { StyleMode } from "./elements/navigation/StyleMode.jsx";
 
 
@@ -74,9 +73,7 @@ export default function App() {
             <Route path='/' element={<Main />} >
                 <Route path="/" element={<List />} />
                 <Route path="done" element={<List />} />
-                {/* <Route path="all" element={<List />} /> */}
             </Route>
-            <Route path="dashboard" element={<LIST />} />
         </Routes>
         {login || <Modal fn={handleLogin} />}
     </ThemeContext.Provider>

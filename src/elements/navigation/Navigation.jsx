@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import './style_nav.scss'
+import './style_nav.scss';
+import './responsive/responsive_nav_style.scss';
 import { User } from './User.jsx';
 import { Nav } from "./Nav.jsx";
 import { Logout } from './Logout.jsx'
@@ -8,18 +9,16 @@ import { useDispatch } from 'react-redux';
 import { ThemeContext } from "../../App.jsx";
 
 
-
 export const Navigation = ({ fn, children }) => {
     const dispatch = useDispatch();
     const theme = useContext(ThemeContext)
-
 
     useEffect(
         () => {
             let user = localStorage.getItem('login');
             user && dispatch(USER_GET_TASKS(JSON.parse(user)));
         }
-    , [])
+        , [])
 
 
     return <div className={"navigation " + theme}>
@@ -27,7 +26,8 @@ export const Navigation = ({ fn, children }) => {
         <hr />
         <Nav />
         <hr />
-        { children}
+        {children}
         <Logout logoutFunction={fn} />
     </div>
+
 }

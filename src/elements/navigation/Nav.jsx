@@ -1,32 +1,42 @@
 import React, { useRef } from "react";
 import './style_nav.scss';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from "react-redux";
-
+import { useMediaQuery } from "react-responsive";
+import { useEffect } from "react";
 
 
 export const Nav = () => {
-    const list = useRef(null);
-    const dashboard = useRef(null);
     const today = useSelector(({ calendar_reducer }) => calendar_reducer.date);
-    
-    const underline = ({ target }) => {
-        list.current.classList.remove('underline');
-        dashboard.current.classList.remove('underline');
-        target.classList.add('underline');
-    }
-    
+    const isSmallMonitor = useMediaQuery({ maxWidth: 1299 });
+    const isFullHDMonitor = useMediaQuery({ minWidth: 1300 });
+    const { pathname } = useLocation();
+
+   
+
+    useEffect(
+        () => {
+            let links = document.querySelectorAll('nav a');
+            links.forEach(elem => {
+                elem.classList.remove('active_link');
+                if (elem.pathname === pathname) elem.classList.add('active_link');
+            })
+            if(pathname === '/done') links[0].classList.add('active_link');
+        }
+    )
+
     return <nav>
-        <Link
-            to={`/?date=${today}`}
-            className="underline"
-            onClick={underline}
-            ref={list}
-        >ежедневник</Link>
-        <Link
-            to="/dashboard"
-            onClick={underline}
-            ref={dashboard}
-        >панель управления</Link>
+        {
+            isSmallMonitor && <>
+                <Link to={`/?date=${today}`}></Link>
+                <Link to={`/dashboard`}></Link>
+            </>
+        }
+        {
+            isFullHDMonitor && <>
+                <Link to={`/?date=${today}`}>ежедневник</Link>
+                <Link to="/dashboard">панель управления</Link>
+            </>
+        }
     </nav>
 }

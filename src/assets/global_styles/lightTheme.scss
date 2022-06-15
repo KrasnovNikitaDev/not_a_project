@@ -55,40 +55,45 @@ $hover_light: rgb(34, 32, 32);
     ._task {
         color: $color_light_theme !important;
 
-        &:hover{
+        &:hover {
             @include hover_effect($hover_light);
         }
     }
 
-    .underline {
+    .active_link {
         border-bottom: 2px solid $color_light_theme
     }
-    .task{
-        &:hover{
+
+    .task {
+        &:hover {
             @include hover_effect($hover_light);
         }
-        .delete_task{
+
+        .delete_task {
             background-image: url('../images/delete-light-theme.png') !important;
-        } 
-        .eddit_task{
+        }
+
+        .eddit_task {
             background-image: url('../images/edit-light-theme.png') !important;
         }
     }
 
-    nav{
-        a{
+    nav {
+        a {
             color: $color_light_theme;
-            &:hover{
+
+            &:hover {
                 @include hover_effect($hover_light);
             }
         }
     }
 
-    .logout, .mode_switcher{
-        &:hover{
+    .logout,
+    .mode_switcher {
+        &:hover {
             @include hover_effect($hover_light);
         }
     }
-    
+
 
 }
