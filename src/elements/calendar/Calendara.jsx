@@ -83,7 +83,7 @@ const Month = memo(({ date }) => {
 
 
 
-const DateComponent = ({ date }) => {
+const DateComponent = ({ date, list }) => {
     return <>
         <div className="date">
             <Header
@@ -93,7 +93,7 @@ const DateComponent = ({ date }) => {
             />
             <WeekDays days={helper.array_of_days} />
             <main>
-                <DataPicker date={date} />
+                <DataPicker date={date} list={list} />
             </main>
         </div>
     </>
@@ -102,12 +102,14 @@ const DateComponent = ({ date }) => {
 
 export const Calendar = () => {
     const dateState = useSelector(store => store.calendar_reducer);
+    const {list} = useSelector(store => store.user_reducer);
+
     const theme = useContext(ThemeContext);
 
 
     return (
         <div className={"calendar_wrapp " + theme}>
-            <DateComponent date={dateState} />
+            <DateComponent date={dateState} list={list}/>
             <Month date={dateState} />
             <Years date={dateState} />
         </div>

@@ -5,13 +5,8 @@ import { Link } from "react-router-dom";
 
 
 const Elem = ({ classN, data, fn }) => {
+    const selectElem = (e) => fn(e, data.v);
    
-   
-    const selectElem = (e) => {
-        fn(e, data.v);
-    }
-    
-    
 
     return (
         <Link
@@ -30,11 +25,13 @@ export const WeekDays = ({ days }) => {
         }
     </div>
 }
+/* остановия на боге со стилями дат*/
 
-
-export const DataPicker = ({ date }) => {
+export const DataPicker = ({ date, list }) => {
     const dispatch = useDispatch();
-    const state = helper.render_dates(date);
+    const state = helper.render_dates(date, list);
+    
+   
 
     const selectDate = (e, n) => {
         let target = (value) => e.target.className.split(' ').includes(value);

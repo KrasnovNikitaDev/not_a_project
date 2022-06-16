@@ -58,7 +58,7 @@ $tarsition: 300ms;
             width: 50px;
         }
 
-        
+
     }
 
     .emty {
@@ -72,9 +72,7 @@ $tarsition: 300ms;
         flex-direction: column;
     }
 
-    .select_date {
-        border: 3px solid blue;
-    }
+
 
 
     /* ==================== datepicker style  ==================== */
@@ -108,12 +106,21 @@ $tarsition: 300ms;
                     gap: 5px;
                     align-items: stretch;
 
+                    .select_date {
+                        border: 2px solid blue;
+                    }
+
                     .data_elem {
                         @include date_elem();
 
                     }
+
                     .today {
-                        background-color: blue;
+                        border: 2px solid rgba(107, 27, 27,);
+                    }
+
+                    .has_tasks {
+                        background: linear-gradient(135deg, rgba(0, 0, 255, 0) 80%, rgba(255, 255, 0, 0.9) 20%);
                     }
                 }
 
@@ -224,7 +231,5 @@ $tarsition: 300ms;
         grid-row: 1/2;
         margin: 0 10px;
         width: calc(100% - 10px)
-        
-        
     }
 }

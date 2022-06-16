@@ -36,7 +36,11 @@ const params_for_date_links = (date, month, year) => {
 /* =====================START DATE_PICKER_COMPONENT===================== */
 export const month = (n) => array_of_month[n];
 
-export const render_dates = (date) => {
+
+export const render_dates = (date, list) => {
+    let has_tasks = is_date_get_task(list);
+
+
     let arr = [];
     let count = 0;
 
@@ -82,12 +86,20 @@ export const render_dates = (date) => {
 
     {
         for (let i = 0; i < daysInCurrentMonth; i++) {
+
             let o = {
                 v: i + 1,
                 n: i + 1,
                 class_name: 'month_date',
                 link_params: params_for_date_links(i + 1, date.currentMonth + 1, date.currentYear)
+            }
 
+            if (has_tasks.hasOwnProperty([date.currentYear])) {
+                if (has_tasks[date.currentYear].hasOwnProperty([date.currentMonth])) {
+                    has_tasks[date.currentYear][date.currentMonth].forEach(item => {
+                        if (o.v === +item) o.class_name += " has_tasks";
+                    })
+                }
             }
 
             if (o.v === date.today && currentMonth === date.currentMonth && currentYear === date.currentYear) o.class_name += ' today select_date';
@@ -104,7 +116,6 @@ export const render_dates = (date) => {
             }
         }
     }
-
     {
         let number = 1
 
@@ -190,10 +201,10 @@ export const set_date_picker = (value, data) => {
 }
 
 
-export const select_date = (e) => {
+export const select_date = ({ target }) => {
     let elem = document.querySelectorAll('.select_date');
     elem.forEach(elem => elem.classList.remove('select_date'));
-    e.target.classList.add('select_date');
+    target.classList.add('select_date');
 }
 
 
@@ -279,3 +290,21 @@ export function render_years(value) {
     return arrMatrix;
 }
 
+
+
+function is_date_get_task(list) {
+    let obj = {}
+
+    for (let props of Object.keys(list)) {
+        let [year, month, date] = props.split('.').reverse();
+        month -= 1;
+
+        if (obj[year] === undefined) obj[year] = {};
+        if (obj[year][month] === undefined) obj[year][month] = [];
+        obj[year][month].push(date)
+
+    }
+
+    return obj
+
+}
