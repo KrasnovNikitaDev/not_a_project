@@ -21,72 +21,48 @@
         "12.06.2022": {
           "task_list": [
             {
-              "key": "2M8S8E3W0J3MIR1",
-              "value": "dklfaskldfj",
+              "key": "6ZCV1L5VKPT7763",
+              "value": "1234",
               "done": false
             },
             {
-              "key": "RTB6VZSVJ93ZC3C",
-              "value": "q123123",
+              "key": "DF2AMBOR4RMUFXE",
+              "value": "123123",
               "done": false
             },
             {
-              "key": "TO90PM3P2I9N64V",
-              "value": "Привет мир",
+              "key": "RUOWITLMWPFHM6O",
+              "value": "234234",
               "done": false
             },
             {
-              "key": "29CWK7W6UEW5WNR",
-              "value": "Привет мир",
+              "key": "XLJX8YYF7OMPS3T",
+              "value": "234142",
               "done": false
             },
             {
-              "key": "FH6DQVY5YZVJXundefinedC",
-              "value": "новая задача",
+              "key": "RKESI2EWDQHRXMH",
+              "value": "ewrw",
               "done": false
             },
             {
-              "key": "MIYVZQDU9SBIQE6",
-              "value": "sdf",
+              "key": "G7AQRFG6AEVCBK7",
+              "value": "1234123",
               "done": false
             },
             {
-              "key": "4QO9QQC5B728E8F",
-              "value": "asd",
-              "done": false
-            },
-            {
-              "key": "J2QOL2XLZCW21LZ",
-              "value": "sdlfasdfk;l ",
-              "done": false
-            },
-            {
-              "key": "ULQOWW9ZX0ZQWRR",
-              "value": "sfdf",
-              "done": false
-            },
-            {
-              "key": "2TK9T3BW4CS0X1L",
-              "value": "asdasd",
-              "done": false
-            },
-            {
-              "key": "9LL63SMUF3TXDQD",
-              "value": "asdf",
-              "done": false
-            },
-            {
-              "key": "EQHMZCFEFIQQ3LG",
-              "value": "asd",
-              "done": false
-            },
-            {
-              "key": "TCDQJXKV53QDXTB",
-              "value": "sdfgdf",
+              "key": "45LRAEB508WQBYQ",
+              "value": "gbzbxbxb",
               "done": false
             }
           ],
-          "done_task_list": []
+          "done_task_list": [
+            {
+              "key": "ULQOWW9ZX0ZQWRR",
+              "value": "1234567890",
+              "done": true
+            }
+          ]
         },
         "01.07.2022": {
           "task_list": [

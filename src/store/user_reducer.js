@@ -21,7 +21,14 @@ export function user_reducer(state = user_state, action) {
             ...state,
             list: {
                 ...state.list,
-                [action.key]: action.value 
+                [action.property]: action.value
+            },
+        };
+        case "EDDIT-TASK": return {
+            ...state,
+            list: {
+                ...state.list,
+                [action.property]: action.value
             },
         };
         case "REORDER_LIST": return {

@@ -18,7 +18,7 @@ export const SET_TODAY = { type: "SET-TODAY" };
 
 
 
-export const USER_GET_TASKS = ({name, mail}) => (dispatch) => {
+export const USER_GET_TASKS = ({ name, mail }) => (dispatch) => {
     axios.get(`http://localhost:3000/tasks?user=${mail}`)
         .then(res => res.data[0])
         .then(({ list }) => {
@@ -52,10 +52,51 @@ export const ADD_TASK = ({ mail }, task, param, list) => {
 
     return ({
         type: "ADD-TASK",
-        key: param,
+        property: param,
         value: {
             task_list: [...list[param].task_list, task],
             done_task_list: [...list[param].done_task_list],
+        }
+    })
+}
+
+export const EDDIT_TASK = ({ mail }, task, param, list, pathname) => {
+    let new_task_list = [...list[param].task_list];
+    let new_done_task_list = [...list[param].done_task_list];
+
+    if (pathname === "/") {
+        new_task_list = new_task_list.map(item => {
+            if (item.key === task.key) return task;
+            else return item
+        })
+    } else {
+        new_done_task_list = new_done_task_list.map(item => {
+            return (item.key === task.key) ? task : item;
+        })
+    }
+
+    axios.get(`http://localhost:3000/tasks?user=${mail}`)
+        .then(res => res.data[0])
+        .then(({ id, list }) => {
+
+            list[param].task_list = new_task_list;
+            list[param].done_task_list = new_done_task_list;
+
+            axios.put(`http://localhost:3000/tasks/${id}`, {
+                id,
+                user: mail,
+                list: {
+                    ...list
+                }
+            })
+        })
+
+    return ({
+        type: "EDDIT-TASK",
+        property: param,
+        value: {
+            task_list: [...new_task_list],
+            done_task_list: [...new_done_task_list],
         }
     })
 }
@@ -77,7 +118,6 @@ export const LIST_REORDER = (param, state, { mail }, list) => {
 
 }
 
-
 export const LIST_TASK_CHECK = (task, param, { mail }) => {
     handele_list_action(task, param, mail, 'check')
 
@@ -89,6 +129,8 @@ export const LIST_TASK_REMOVE = (task, param, { mail }) => {
 
     return ({ type: 'TASK-REMOVE', task, param })
 }
+
+
 
 
 function handele_list_action(target, param, mail, value) {
@@ -133,35 +175,38 @@ function handele_list_action(target, param, mail, value) {
                     break;
             }
 
-            axios.put(`http://localhost:3000/tasks/${id}`, 
+            axios.put(`http://localhost:3000/tasks/${id}`,
                 create_object(id, user, list, task_list, done_task_list))
         })
 
 
 
-        function create_object(id, user, list, task_list, done_task_list){
-            if (task_list.length === 0 && done_task_list.length === 0){
-                delete list[param];
-                
-                return ({
-                    id,
-                    user,
-                    list: {
-                        ...list,
-                    }
-                })
-            }
+    function create_object(id, user, list, task_list, done_task_list) {
+        if (task_list.length === 0 && done_task_list.length === 0) {
+            delete list[param];
 
             return ({
-                    id,
-                    user,
-                    list: {
-                        ...list,
-                        [param]: {
-                            task_list: task_list,
-                            done_task_list: done_task_list,
-                        }
-                    }
-                })
+                id,
+                user,
+                list: {
+                    ...list,
+                }
+            })
         }
+
+        return ({
+            id,
+            user,
+            list: {
+                ...list,
+                [param]: {
+                    task_list: task_list,
+                    done_task_list: done_task_list,
+                }
+            }
+        })
+    }
 }
+
+
+

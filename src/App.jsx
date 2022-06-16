@@ -4,7 +4,7 @@ import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { Calendar } from "./elements/calendar/Calendara.jsx";
 import { Navigation } from "./elements/navigation/Navigation.jsx";
 import { Form } from "./elements/login/Form.jsx";
-import { ToDOList } from "./elements/toDoList/List.jsx";
+import { ToDOList } from "./elements/toDoList/ToDoList.jsx";
 import { List } from "./elements/toDoList/List.jsx";
 import { StyleMode } from "./elements/navigation/StyleMode.jsx";
 
@@ -28,7 +28,7 @@ const Modal = ({ fn }) => {
 
 
 const Main = () => {
-    return <main>
+    return <main id="main">
         <ToDOList />
         <Calendar />
     </main>

@@ -5,7 +5,9 @@
 
 
     .navigation {
-        position: relative;
+        position: fixed;
+        left: 0;
+        top: 0;;
         width: $width;
         height: 100vh;
         border-radius: 0 10px 10px 0;

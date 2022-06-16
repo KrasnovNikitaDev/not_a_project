@@ -10,7 +10,6 @@
 
     main {
         flex: 1;
-        // gap: 10px;
         display: grid;
         grid-template-columns: 1fr min-content;
         height: 100vh;
@@ -23,7 +22,8 @@
     top: 0;
     left: 0;
 
-    .modal_wrapper {
+    .modal_wrapper,
+    .modal_wrapper_eddit_form {
         width: 100vw;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
@@ -31,11 +31,14 @@
         display: grid;
         place-items: center;
     }
+
+    .modal_wrapper_eddit_form {}
 }
 
-@media screen and (max-width: 1050px) {
-    main {
 
+@media screen and (max-width: 1299px) {
+    #main {
+        margin-left: 75px;
         display: grid;
         gap: 10px;
         grid-template-columns: 1fr;
