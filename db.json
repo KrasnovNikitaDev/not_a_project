@@ -18,77 +18,11 @@
       "id": 1,
       "user": "user@mail.com",
       "list": {
-        "12.06.2022": {
+        "17.06.2022": {
           "task_list": [
             {
-              "key": "6ZCV1L5VKPT7763",
-              "value": "1234",
-              "done": false
-            },
-            {
-              "key": "DF2AMBOR4RMUFXE",
-              "value": "123123",
-              "done": false
-            },
-            {
-              "key": "RUOWITLMWPFHM6O",
-              "value": "234234",
-              "done": false
-            },
-            {
-              "key": "XLJX8YYF7OMPS3T",
-              "value": "234142",
-              "done": false
-            },
-            {
-              "key": "RKESI2EWDQHRXMH",
-              "value": "ewrw",
-              "done": false
-            },
-            {
-              "key": "G7AQRFG6AEVCBK7",
-              "value": "1234123",
-              "done": false
-            },
-            {
-              "key": "45LRAEB508WQBYQ",
-              "value": "gbzbxbxb",
-              "done": false
-            }
-          ],
-          "done_task_list": [
-            {
-              "key": "ULQOWW9ZX0ZQWRR",
-              "value": "1234567890",
-              "done": true
-            }
-          ]
-        },
-        "12.01.2018": {
-          "task_list": [
-            {
-              "key": "E32FVWRWTOAWBEK",
-              "value": "qweqwe",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "16.06.2022": {
-          "task_list": [
-            {
-              "key": "JZCI2ZS6ZO2B4TB",
-              "value": "f",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "26.06.2022": {
-          "task_list": [
-            {
-              "key": "R6QDEYRSK69TI12",
-              "value": "дль",
+              "key": "BLTOAX0VGNTWIUQ",
+              "value": "dhjbvljdkvlnksjc \nsdfasdf",
               "done": false
             }
           ],

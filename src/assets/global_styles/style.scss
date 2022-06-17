@@ -1,3 +1,5 @@
+@import "style_form.scss";
+
 * {
     margin: 0;
     padding: 0;
@@ -17,23 +19,8 @@
 }
 
 
-#modal {
-    position: fixed;
-    top: 0;
-    left: 0;
 
-    .modal_wrapper,
-    .modal_wrapper_eddit_form {
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
-        display: grid;
-        place-items: center;
-    }
 
-    .modal_wrapper_eddit_form {}
-}
 
 
 @media screen and (max-width: 1299px) {

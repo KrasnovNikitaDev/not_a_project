@@ -19,28 +19,35 @@ export const Eddit = ({ task, hideModal }) => {
             ...task,
             value: eddit,
         }
-        dispatch(actions.EDDIT_TASK(user, eddit_task, param, list, pathname))
-
+        dispatch(actions.EDDIT_TASK(user, eddit_task, param, list, pathname));
+        hideModal();
     }
 
-    const exit = () => hideModal();
+    const animeUnderline = ({ target }) => {
+        target.nextSibling.classList.toggle('anime_line');
+    }
 
-    return <div className='eddit_task_area'>
-        <form onSubmit={handleSubmit(eddit)}>
-            <textarea
-                cols="30"
-                rows="10"
-                defaultValue={task.value}
-                {
-                ...register("eddit",
-                    {
-                        required: 'Нельза оставлять пустое поле.'
-                    })
-                }></textarea>
-            <p>{errors.eddit && errors.eddit.message}</p>
+    return <div className='form_block'>
+        <form onSubmit={handleSubmit(eddit)} autoComplete="off">
+            <h3>Изменить задачу</h3>
             <div>
-                <button type='submite'>ИЗМЕНИТЬ</button>
-                <button onClick={exit}>ВЫХОД</button>
+                <textarea
+                    onFocus={animeUnderline}
+                    defaultValue={task.value}
+                    {
+                    ...register("eddit",
+                        {
+                            required: 'Нельза оставлять пустое поле.',
+                            onBlur: (e) => animeUnderline(e),
+                        })
+                    }></textarea>
+                <span></span>
+                <p>{errors.eddit && errors.eddit.message}</p>
+            </div>
+            <div className='buttons'>
+                <button type='submit'>Добавить</button>
+                <button id='exit' onClick={hideModal}>выход</button>
+
             </div>
         </form>
     </div>

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { Reorder } from "framer-motion"
 import './style_list.scss';
-import { Link, useLocation, Outlet, useOutletContext, useSearchParams } from "react-router-dom";
+import {  useLocation, useOutletContext } from "react-router-dom";
 import * as helpers from './functions.js';
 import * as actions from '../../store/action.js'
 import { Eddit } from './EdditTask.jsx';
@@ -12,7 +12,7 @@ import { Eddit } from './EdditTask.jsx';
 
 const Task = ({elem, task, user, param}) => {
     const dispatch = useDispatch();
-    const [modal, setModal] = useState(false);
+    const [modal, setModal] = useState(true);
    
     const check = (e) => {
         let result = helpers.check_task(e, task);

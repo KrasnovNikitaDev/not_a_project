@@ -64,8 +64,19 @@ function task_action(state, param, target, value) {
                 done = list.done_task_list.filter(elem => elem.key !== target.key && elem);
                 undone = list.task_list;
             }
-        } 
-        break;
+
+            if (done.length === 0 && undone.length === 0) {
+                delete state.list[param];
+
+                return ({
+                    ...state,
+                    list: {
+                        ...state.list,
+                    }
+                })
+            }
+        }
+            break;
         case "check": {
             if (pathname === "/") {
                 undone = list.task_list.filter(elem => elem.key !== target.key && elem);
@@ -74,8 +85,8 @@ function task_action(state, param, target, value) {
                 done = list.done_task_list.filter(elem => elem.key !== target.key && elem);
                 undone = [...list.task_list, target]
             }
-        } 
-        break;
+        }
+            break;
     }
 
 

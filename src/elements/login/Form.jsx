@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import './style_form.scss';
 import { Login } from "./Login.jsx";
 import { Signin } from './Signin.jsx';
 
