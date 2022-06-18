@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import './style_nav.scss';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
@@ -28,14 +27,14 @@ export const Nav = () => {
     return <nav>
         {
             isSmallMonitor && <>
-                <Link to={`/?date=${today}`}></Link>
-                <Link to={`/dashboard`}></Link>
+                <Link className="todolist" to={`/?date=${today}`}></Link>
+                <Link className="dashboard" to={`/dashboard`}></Link>
             </>
         }
         {
             isFullHDMonitor && <>
-                <Link to={`/?date=${today}`}>ежедневник</Link>
-                <Link to="/dashboard">панель управления</Link>
+                <Link  to={`/?date=${today}`}>ежедневник</Link>
+                <Link  to="/dashboard">панель управления</Link>
             </>
         }
     </nav>

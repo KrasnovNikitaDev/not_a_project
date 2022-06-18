@@ -7,11 +7,12 @@
     .navigation {
         position: fixed;
         left: 0;
-        top: 0;;
+        top: 0;
         width: $width;
         height: 100vh;
         border-radius: 0 10px 10px 0;
         padding: 25px 15px 25px 15px;
+        z-index: 2;
     }
 
     .user {
@@ -24,11 +25,55 @@
         .avatar {
             width: 50px;
             height: 50px;
-            border-radius: 50%;
-            background-image: url('../../../assets/images/avatar-g5cd60da16_640.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
+            z-index: 10;
+            display: grid;
+            place-items: center;
+            background-image: none;
+            border-radius: 0;
+            .avatar_img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-image: url('../../assets/images/avatar-g5cd60da16_640.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .user_panel {
+            position: absolute;
+            top: 0;
+            left: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            height: 50px;
+            min-width: 150px;
+            width: max-content;
+            border-radius: 20px 1vmax 1vmax 20px;
+            transform: scale(0);
+            transform-origin: left;
+            z-index: 5;
+
+            h3 {
+                box-sizing: content-box;
+                padding: 0 30px 0 60px;
+            }
+        }
+
+        .show_user {
+            border: 1px solid gray;
+            transition: 0.3s;
+            transform-origin: left;
+            transform: scale(1);
+
+
         }
 
         h3 {
@@ -52,7 +97,6 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-image: url("../../../assets/images//delete.png");
             background-repeat: no-repeat;
             background-position: center;
             background-size: 30px;
@@ -61,6 +105,7 @@
                 background-color: rgba(168, 160, 160, 0.137);
             }
         }
+
 
         .active_link {
             background-color: rgba(168, 160, 160, 0.137);
@@ -76,12 +121,12 @@
         align-items: center;
 
         .icon {
-            width: 40px;
-            height: 40px;
-            background: url('../../../assets/images/premium-icon-log-out-143310.png') center no-repeat;
+            width: 30px;
+            height: 30px;
             background-position: center;
-            background-size: 40px;
+            background-size: contain;
         }
+
 
 
         &:hover {
@@ -91,7 +136,6 @@
                 color: blue;
             }
         }
-
     }
 
 

@@ -17,23 +17,33 @@
     {
       "id": 1,
       "user": "user@mail.com",
+      "list": {}
+    },
+    {
+      "id": 3,
+      "user": "new_user@mail.com",
       "list": {
-        "17.06.2022": {
+        "18.06.2022": {
           "task_list": [
             {
-              "key": "BLTOAX0VGNTWIUQ",
-              "value": "dhjbvljdkvlnksjc \nsdfasdf",
+              "key": "YRGMETVXC5F1undefined1Z",
+              "value": "n .nm \n",
+              "done": false
+            },
+            {
+              "key": "VUU1DUW34ZH46BO",
+              "value": "n .n;falskm 343242j",
+              "done": false
+            },
+            {
+              "key": "5Z8HWS4HO6undefinedYQ68",
+              "value": "lksaflkfmlksdflasd",
               "done": false
             }
           ],
           "done_task_list": []
         }
       }
-    },
-    {
-      "id": 3,
-      "user": "new_user@mail.com",
-      "list": {}
     }
   ]
 }

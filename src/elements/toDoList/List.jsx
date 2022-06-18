@@ -12,7 +12,7 @@ import { Eddit } from './EdditTask.jsx';
 
 const Task = ({elem, task, user, param}) => {
     const dispatch = useDispatch();
-    const [modal, setModal] = useState(true);
+    const [modal, setModal] = useState(false);
    
     const check = (e) => {
         let result = helpers.check_task(e, task);
@@ -25,6 +25,7 @@ const Task = ({elem, task, user, param}) => {
 
     const eddit = () => setModal((modal) => !modal);
 
+
     return <>
         <Reorder.Item value={task} elem={elem} key={elem.key} className="task">
             <input type="checkbox" checked={task.done} name="" id="" onChange={check} />
@@ -36,7 +37,7 @@ const Task = ({elem, task, user, param}) => {
 
         {
             modal && ReactDOM.createPortal(
-                <div className="modal_wrapper_eddit_form">
+                <div className="modal_wrapper_eddit_form" >
                     <Eddit task={task} hideModal={eddit}/>
                 </div>
                 , document.querySelector('#modal'))

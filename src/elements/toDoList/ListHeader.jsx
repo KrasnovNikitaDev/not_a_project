@@ -24,6 +24,8 @@ export const Header = () => {
         }
     )
 
+   
+
     return <>
         <header>
             <div className="list_nav">
@@ -36,7 +38,7 @@ export const Header = () => {
         {
             modal && ReactDOM.createPortal(
                 <div className="modal_wrapper">
-                    <TaskForm hide={show_modal_add} />
+                    <TaskForm hide={show_modal_add} show={modal}/>
                 </div>
                 , document.querySelector('#modal'))
         }

@@ -7,7 +7,7 @@ import * as actions from '../../store/action.js'
 import { useForm } from "react-hook-form";
 
 
-export const TaskForm = ({ hide }) => {
+export const TaskForm = ({ show, hide }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [searchParams] = useSearchParams();
     const dispatch = useDispatch();
@@ -15,6 +15,11 @@ export const TaskForm = ({ hide }) => {
     const param = searchParams.get('date');
 
 
+    useEffect(
+        () => show && document.addEventListener('keydown', ({key}) => {
+            key === 'Escape' && hide();
+        })
+    , [show])
 
     const add = ({ task }) => {
         let taskObject = helpers.task(task);
@@ -27,12 +32,13 @@ export const TaskForm = ({ hide }) => {
         target.nextSibling.classList.toggle('anime_line');
     }
 
+   
 
-    return <div className="form_block">
+    return <div className="form_block"> 
         <form onSubmit={handleSubmit(add)} autoComplete="off">
             <h3>Добавить задачу</h3>
             <div>
-                <textarea type="text"
+                <input type="text"
                     onFocus={animeUnderline}
                     placeholder="Введите задачу"
                     {
@@ -41,14 +47,14 @@ export const TaskForm = ({ hide }) => {
                             required: 'Поле пустое, введите задачу.',
                             onBlur: (e) => animeUnderline(e),
                         }
-                    )}></textarea>
+                    )}/>
                 <span></span>
                 <p>{errors.task && errors.task.message}</p>
 
             </div>
             <div className='buttons'>
                 <button type='submit'>Добавить</button>
-                <button id='exit' onClick={hide}>выход</button>
+                <button id='exit' onClick={hide} >выход</button>
 
             </div>
         </form>

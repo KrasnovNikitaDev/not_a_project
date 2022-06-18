@@ -1,4 +1,6 @@
 @import "style_form.scss";
+@import "darkTheme.scss";
+@import "lightTheme.scss";
 
 * {
     margin: 0;
@@ -15,6 +17,7 @@
         display: grid;
         grid-template-columns: 1fr min-content;
         height: 100vh;
+        z-index: 1;
     }
 }
 

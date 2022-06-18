@@ -1,3 +1,4 @@
+
 $width: 300px;
 
 
@@ -63,7 +64,8 @@ nav {
     .icon {
         width: 30px;
         height: 30px;
-        background: url('../../assets/images/premium-icon-log-out-143310.png') center no-repeat;
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: contain;
     }
 
@@ -83,12 +85,14 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    
+
     h5 {
         text-transform: uppercase;
-        
-        &:hover{
+
+        &:hover {
             cursor: pointer;
         }
     }
 }
+
+@import "./responsive_nav_style.scss";

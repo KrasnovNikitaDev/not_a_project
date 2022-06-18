@@ -102,7 +102,7 @@ export const render_dates = (date, list) => {
                 }
             }
 
-            if (o.v === date.today && currentMonth === date.currentMonth && currentYear === date.currentYear) o.class_name += ' today select_date';
+            if (o.v === date.today && currentMonth === date.currentMonth && currentYear === date.currentYear) o.class_name += ' today';
 
             if (o.v === date.selectDate) o.class_name += ' select_date';
 

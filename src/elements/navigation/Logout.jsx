@@ -1,5 +1,4 @@
 import React from "react";
-import './style_nav.scss';
 import { useMediaQuery } from "react-responsive";
 
 

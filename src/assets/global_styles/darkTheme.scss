@@ -1,5 +1,5 @@
 $color_dark_theme: rgb(221, 201, 201);
-
+$dark:#2a2834;
 @mixin hover_effect ($color) {
     cursor: pointer;
     color: $color !important;
@@ -7,9 +7,12 @@ $color_dark_theme: rgb(221, 201, 201);
 
 
 .dark {
-    background-color: #2a2834 !important;
+    background-color:  $dark!important;
     color: $color_dark_theme !important;
 
+    a {
+        color: $color_dark_theme !important;
+    }
 
     .arrows {
         h2:hover {
@@ -17,26 +20,11 @@ $color_dark_theme: rgb(221, 201, 201);
         }
     }
 
-    .date_title {
+    .date_title,
+    .back_today,
+    a {
         &:hover {
             @include hover_effect(white)
-        }
-    }
-
-    .back_today {
-        margin-top: 5px;
-
-        &:hover {
-            @include hover_effect(white)
-        }
-    }
-
-
-    .data_elem {
-        color: $color_dark_theme;
-
-        &:hover {
-            @include hover_effect(white);
         }
     }
 
@@ -77,6 +65,19 @@ $color_dark_theme: rgb(221, 201, 201);
                 @include hover_effect(white);
             }
         }
+
+        .todolist {
+            background-image: url("../images/clipboard_dark.png");
+        }
+
+        .dashboard {
+            background-image: url("../images/dashboard_dark.png");
+        }
+    }
+
+    .icon {
+        transform: rotate(180deg);
+        background-image: url("../images/logout_dark.png");
     }
 
     .logout,
@@ -84,6 +85,9 @@ $color_dark_theme: rgb(221, 201, 201);
         &:hover {
             @include hover_effect(white);
         }
+    }
+    .user_panel{
+        background-color: $dark;
     }
 
 }

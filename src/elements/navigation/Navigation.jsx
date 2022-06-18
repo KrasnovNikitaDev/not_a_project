@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from "react";
 import './style_nav.scss';
-import './responsive/responsive_nav_style.scss';
 import { User } from './User.jsx';
 import { Nav } from "./Nav.jsx";
 import { Logout } from './Logout.jsx'

@@ -51,6 +51,11 @@ $tarsition: 300ms;
         align-items: center;
         justify-content: space-between;
         padding: 0px 10px;
+        div{
+            .back_today{
+                margin-top: 5px;
+            }
+        }
 
         .arrows {
             display: flex;
@@ -107,7 +112,7 @@ $tarsition: 300ms;
                     align-items: stretch;
 
                     .select_date {
-                        border: 2px solid blue;
+                        border: 2px solid blue !important;
                     }
 
                     .data_elem {
@@ -230,6 +235,6 @@ $tarsition: 300ms;
         grid-column: 1/2;
         grid-row: 1/2;
         margin: 0 10px;
-        width: calc(100% - 10px)
+        width: calc(100% - 10px);
     }
 }

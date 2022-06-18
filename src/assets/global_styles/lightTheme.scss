@@ -1,6 +1,6 @@
 $color_light_theme: rgb(23, 55, 94);
 $hover_light: rgb(34, 32, 32);
-
+$lihght: rgb(245, 237, 237);
 
 @mixin hover_effect ($color) {
     cursor: pointer;
@@ -9,9 +9,13 @@ $hover_light: rgb(34, 32, 32);
 
 
 .light {
-    background-color: rgb(245, 237, 237) !important;
+    background-color: $lihght !important;
     color: $color_light_theme !important;
 
+    a {
+        color: $color_light_theme !important;
+
+    }
 
     .arrows {
         h2:hover {
@@ -19,26 +23,11 @@ $hover_light: rgb(34, 32, 32);
         }
     }
 
-    .date_title {
+    .date_title,
+    .back_today,
+    a {
         &:hover {
             @include hover_effect($hover_light)
-        }
-    }
-
-    .back_today {
-        margin-top: 5px;
-
-        &:hover {
-            @include hover_effect($hover_light)
-        }
-    }
-
-
-    .data_elem {
-        color: $color_light_theme;
-
-        &:hover {
-            @include hover_effect($hover_light);
         }
     }
 
@@ -86,6 +75,19 @@ $hover_light: rgb(34, 32, 32);
                 @include hover_effect($hover_light);
             }
         }
+
+        .todolist {
+            background-image: url("../images/clipboard_light.png");
+        }
+
+        .dashboard {
+            background-image: url("../images/dashboard_light.png");
+        }
+    }
+
+    .icon {
+        transform: rotate(180deg);
+        background-image: url("../images/logout.png");
     }
 
     .logout,
@@ -95,5 +97,7 @@ $hover_light: rgb(34, 32, 32);
         }
     }
 
-
+    .user_panel{
+        background-color: $lihght;
+    }
 }

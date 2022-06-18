@@ -5,6 +5,7 @@ $bgc: rgb(236, 231, 221);
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 100;
 
     .modal_wrapper,
     .modal_wrapper_eddit_form {

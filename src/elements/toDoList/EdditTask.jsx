@@ -13,6 +13,12 @@ export const Eddit = ({ task, hideModal }) => {
     const { list, user } = useSelector(store => store.user_reducer);
     const { pathname } = useLocation();
 
+    useEffect(
+        () => hideModal && document.addEventListener('keydown', ({key}) => {
+            key === 'Escape' && hideModal();
+        })
+    , [hideModal])
+
 
     const eddit = ({ eddit }) => {
         let eddit_task = {
@@ -27,11 +33,13 @@ export const Eddit = ({ task, hideModal }) => {
         target.nextSibling.classList.toggle('anime_line');
     }
 
+    const exit = e => console.log(exit);
+ 
     return <div className='form_block'>
         <form onSubmit={handleSubmit(eddit)} autoComplete="off">
             <h3>Изменить задачу</h3>
             <div>
-                <textarea
+                <input
                     onFocus={animeUnderline}
                     defaultValue={task.value}
                     {
@@ -40,7 +48,7 @@ export const Eddit = ({ task, hideModal }) => {
                             required: 'Нельза оставлять пустое поле.',
                             onBlur: (e) => animeUnderline(e),
                         })
-                    }></textarea>
+                    }/>
                 <span></span>
                 <p>{errors.eddit && errors.eddit.message}</p>
             </div>
