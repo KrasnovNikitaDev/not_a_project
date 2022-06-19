@@ -1,11 +1,11 @@
 $add_color: rgb(13, 117, 13);
 
-@mixin active_btn($color) {
+@mixin active_btn($color, $width, $height) {
     display: grid;
     place-items: center;
-    width: 70px;
+    width: $width;
     min-width: max-content;
-    height: 40px;
+    height: $height;
     background-color: $color;
     border-radius: 10px;
     color: black;
@@ -23,14 +23,13 @@ $add_color: rgb(13, 117, 13);
 
 
 .list_wrapper {
-    margin: 0 10px;
+    margin-left: 10px;
 
     .list {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100vh;
-        max-height: max-content;
+        min-height: 100vh;
         border-radius: 10px;
         padding: 10px 20px;
 
@@ -47,7 +46,7 @@ $add_color: rgb(13, 117, 13);
                 display: flex;
                 gap: 20px;
 
-                a{
+                a {
                     display: grid;
                     place-items: center;
                     min-width: max-content;
@@ -56,7 +55,7 @@ $add_color: rgb(13, 117, 13);
             }
 
             .add {
-                @include active_btn($add_color);
+                @include active_btn($add_color, 70px, 35px);
                 font-size: 30px;
                 font-weight: bold;
             }
@@ -99,8 +98,8 @@ $add_color: rgb(13, 117, 13);
                 }
 
                 p {
-                    flex: 20;
-                    font-size: 20px;
+                    flex: 15;
+                    font-size: 18px;
                     margin-left: 20px;
                 }
 
@@ -146,7 +145,7 @@ $add_color: rgb(13, 117, 13);
     height: 400px;
     background-color: #fff;
     border-radius: 5px;
-    padding: 10px; 
+    padding: 10px;
 }
 
 
@@ -157,13 +156,46 @@ $add_color: rgb(13, 117, 13);
 @media screen and (max-width: 1050px) {
     .list_wrapper {
         grid-row: 2/3;
-        margin: 0 10px;
         width: calc(100% - 10px);
+        margin: 0 10px;
 
         .list {
             min-height: calc(100vh - 430px);
-            height: max-content;
         }
 
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .list_wrapper {
+        width: calc(100% - 5px);
+        margin: 0 5px;
+
+        .list {
+            header {
+                font-size: 0.85rem;
+
+                .add {
+                    width: 60px;
+                    height: 30px;
+                    font-size: 22px !important;
+                }
+            }
+
+            p {
+                font-size: 16px !important;
+            }
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 570px) {
+    .list_wrapper {
+        .list{
+            min-height: calc(100vh - 430px - 60px);
+        }
     }
 }

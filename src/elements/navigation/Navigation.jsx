@@ -10,7 +10,7 @@ import { ThemeContext } from "../../App.jsx";
 
 export const Navigation = ({ fn, children }) => {
     const dispatch = useDispatch();
-    const theme = useContext(ThemeContext)
+    const theme = useContext(ThemeContext);
 
     useEffect(
         () => {

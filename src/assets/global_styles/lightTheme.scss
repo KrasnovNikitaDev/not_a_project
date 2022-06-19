@@ -101,3 +101,9 @@ $lihght: rgb(245, 237, 237);
         background-color: $lihght;
     }
 }
+
+@media screen and (max-width: 570px) {
+    #root{
+        background-color: $lihght;
+    }
+}

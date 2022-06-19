@@ -91,3 +91,9 @@ $dark:#2a2834;
     }
 
 }
+
+@media screen and (max-width: 570px) {
+    #root{
+        background-color: $dark;
+    }
+}

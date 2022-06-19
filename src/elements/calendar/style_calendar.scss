@@ -235,6 +235,17 @@ $tarsition: 300ms;
         grid-column: 1/2;
         grid-row: 1/2;
         margin: 0 10px;
-        width: calc(100% - 10px);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .calendar_wrapp {
+        margin: 0 5px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .calendar_wrapp {
+        margin: auto
     }
 }

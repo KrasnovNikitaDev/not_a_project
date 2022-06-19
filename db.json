@@ -17,7 +17,94 @@
     {
       "id": 1,
       "user": "user@mail.com",
-      "list": {}
+      "list": {
+        "19.06.2022": {
+          "task_list": [
+            {
+              "key": "548Z2RMY1VUZ1W9",
+              "value": "1234234125",
+              "done": false
+            },
+            {
+              "key": "365N47B3WM8IAT3",
+              "value": "asdfsd",
+              "done": false
+            },
+            {
+              "key": "SI2CBP37CKVQMIS",
+              "value": "sdfs",
+              "done": false
+            },
+            {
+              "key": "7LXGWDNIVADKM4G",
+              "value": "kllkdfgms;dfkgsdfg",
+              "done": false
+            },
+            {
+              "key": "9W6undefinedOVQ0JSJO36R",
+              "value": "erg",
+              "done": false
+            },
+            {
+              "key": "3HUGI8TM7OP1FTH",
+              "value": "qr234f32413",
+              "done": false
+            },
+            {
+              "key": "2U8MP178YXFCM73",
+              "value": "413241234",
+              "done": false
+            },
+            {
+              "key": "HDJW8undefinedK2V3HGJBZ",
+              "value": "3241234",
+              "done": false
+            },
+            {
+              "key": "1OHHO9OTBGR7ACV",
+              "value": "asdfs",
+              "done": false
+            },
+            {
+              "key": "B60SZIVVCZ55TCE",
+              "value": "asdfs",
+              "done": false
+            },
+            {
+              "key": "PI2ESRM3AFGSALM",
+              "value": "asdfsfas",
+              "done": false
+            },
+            {
+              "key": "0SJUV1FTYC3IN78",
+              "value": "hbjl",
+              "done": false
+            },
+            {
+              "key": "Z5QSDH3WZNZ4Q23",
+              "value": "lkm;l",
+              "done": false
+            }
+          ],
+          "done_task_list": [
+            {
+              "key": "BB68U2DP77JQPE2",
+              "value": "asdfkaslkfmsd",
+              "done": true
+            }
+          ]
+        },
+        "26.06.2022": {
+          "task_list": [
+            {
+              "key": "3R4V2LKR9ULNMM9",
+              "value": "kjnkjnl",
+              "done": false
+            }
+          ],
+          "done_task_list": []
+        }
+      }
     },
     {
       "id": 3,
