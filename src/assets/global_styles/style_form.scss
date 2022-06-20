@@ -11,8 +11,8 @@ $bgc: rgb(236, 231, 221);
     .modal_wrapper_eddit_form {
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(15px);
         display: grid;
         place-items: center;
     }
@@ -22,11 +22,11 @@ $bgc: rgb(236, 231, 221);
         height: 400px;
         padding: 15px;
         border-radius: 10px;
-        background-color: $bgc;
 
         h3 {
             margin-bottom: 30px;
             text-transform: uppercase;
+            color: rgb(245, 237, 237);
         }
 
         form {
@@ -40,12 +40,14 @@ $bgc: rgb(236, 231, 221);
                 flex-direction: column;
 
                 input {
-                    background-color: rgba(255, 255, 255, 0.5);
+                    background-color: rgba(255, 255, 255, 0.897);
                     font-size: 16px;
-                    padding: 0 5px;
+                    padding: 0 10px;
                     height: 35px;
                     width: 100%;
                     border: none;
+                    border-radius: 1vmax;
+
 
                     &:focus {
                         outline: none;
@@ -70,17 +72,18 @@ $bgc: rgb(236, 231, 221);
                     align-self: center;
                     width: 0%;
                     box-sizing: border-box;
-                    height: 2px;
+                    height: 3px;
                 }
 
                 .anime_line {
                     transition: .3s;
-                    width: 100%;
+                    width: 97%;
                     background-color: blue;
                 }
 
                 p {
                     height: 18px;
+                    color: rgb(245, 237, 237);
                 }
 
             }
@@ -132,6 +135,7 @@ $bgc: rgb(236, 231, 221);
 
                 h6 {
                     text-transform: uppercase;
+                    color: rgb(241, 232, 232);
 
                     &:hover {
                         cursor: pointer;
@@ -146,3 +150,10 @@ $bgc: rgb(236, 231, 221);
 }
 
 
+
+
+@media screen and (max-width: 570px) {
+    .form_block {
+        width: calc(100% - 20px) !important;
+    }
+}

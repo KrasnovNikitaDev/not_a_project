@@ -42,7 +42,7 @@ export default function App() {
     const modeTheme = localStorage.getItem('mode') || 'light';
     const [mode, setMode] = useState(modeTheme);
 
-    const setTheme = ({ target }) => {
+    const setTheme = () => {
         if (mode === 'light') {
             localStorage.setItem("mode", "dark");
             setMode(() => 'dark');

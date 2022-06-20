@@ -100,10 +100,23 @@ $lihght: rgb(245, 237, 237);
     .user_panel{
         background-color: $lihght;
     }
-}
-
-@media screen and (max-width: 570px) {
-    #root{
+    .task{
         background-color: $lihght;
     }
 }
+
+@media screen and (max-width: 570px) {
+    body{
+        background-color: $lihght;
+    }
+    .light{
+        .todolist {
+            background-image: url("../images/clipboard_light.png");
+        }
+        
+        .dashboard {
+            background-image: url("../images/dashboard_light.png");
+        }
+    }
+}
+

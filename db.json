@@ -26,6 +26,11 @@
               "done": false
             },
             {
+              "key": "7LXGWDNIVADKM4G",
+              "value": "kllkdfgms;dfkgsdfg",
+              "done": false
+            },
+            {
               "key": "365N47B3WM8IAT3",
               "value": "asdfsd",
               "done": false
@@ -33,11 +38,6 @@
             {
               "key": "SI2CBP37CKVQMIS",
               "value": "sdfs",
-              "done": false
-            },
-            {
-              "key": "7LXGWDNIVADKM4G",
-              "value": "kllkdfgms;dfkgsdfg",
               "done": false
             },
             {
@@ -83,22 +83,6 @@
             {
               "key": "Z5QSDH3WZNZ4Q23",
               "value": "lkm;l",
-              "done": false
-            }
-          ],
-          "done_task_list": [
-            {
-              "key": "BB68U2DP77JQPE2",
-              "value": "asdfkaslkfmsd",
-              "done": true
-            }
-          ]
-        },
-        "26.06.2022": {
-          "task_list": [
-            {
-              "key": "3R4V2LKR9ULNMM9",
-              "value": "kjnkjnl",
               "done": false
             }
           ],

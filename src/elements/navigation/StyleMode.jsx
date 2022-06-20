@@ -6,7 +6,6 @@ import { useMediaQuery } from "react-responsive";
 export const StyleMode = ({ handleSwitch, mode }) => {
     const state = mode === 'light' ? true : false;
     const onChange = (e) => handleSwitch(e);
-    const isSmallMonitor = useMediaQuery({ maxWidth: 1299 });
     const isFullHDMonitor = useMediaQuery({ minWidth: 1300 });
 
 

@@ -64,7 +64,8 @@ export const User = () => {
 }
 
 function changeTheme(theme, arg) {
-    let root = document.querySelector('#root');
+    let root = document.body;
+
     switch (arg) {
         case 'add': {
             if(root.className) root.classList.remove(root.className)

@@ -1,5 +1,6 @@
 $color_dark_theme: rgb(221, 201, 201);
 $dark:#2a2834;
+
 @mixin hover_effect ($color) {
     cursor: pointer;
     color: $color !important;
@@ -7,7 +8,7 @@ $dark:#2a2834;
 
 
 .dark {
-    background-color:  $dark!important;
+    background-color: $dark !important;
     color: $color_dark_theme !important;
 
     a {
@@ -47,7 +48,7 @@ $dark:#2a2834;
     }
 
     .active_link {
-        border-bottom: 2px solid $color_dark_theme
+        border-bottom: 2px solid $color_dark_theme;
     }
 
     .task {
@@ -86,14 +87,31 @@ $dark:#2a2834;
             @include hover_effect(white);
         }
     }
-    .user_panel{
+
+    .user_panel {
+        background-color: $dark;
+    }
+
+    .task{
         background-color: $dark;
     }
 
 }
 
 @media screen and (max-width: 570px) {
-    #root{
+    body {
         background-color: $dark;
     }
+
+    .dark {
+        .todolist {
+            background-image: url("../images/clipboard_dark.png");
+        }
+
+        .dashboard {
+            background-image: url("../images/dashboard_dark.png");
+        }
+    }
+
+    
 }

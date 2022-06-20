@@ -29,8 +29,8 @@ export const Header = () => {
     return <>
         <header>
             <div className="list_nav">
-                <Link to={`/?date=${today}`}>ЗАДАЧИ НА СЕГОДНЯ</Link>
-                <Link to={`done?date=${today}`}>ВЫПОЛНЕННЫЕ НА СЕГОДНЯ</Link>
+                <Link to={`/?date=${today}`}>СЕГОДНЯ</Link>
+                <Link to={`done?date=${today}`}>ВЫПОЛНЕННЫЕ</Link>
             </div>
             <div className="add" onClick={show_modal_add}>+</div>
         </header>
