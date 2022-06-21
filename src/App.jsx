@@ -7,6 +7,7 @@ import { Form } from "./elements/login/Form.jsx";
 import { ToDOList } from "./elements/toDoList/ToDoList.jsx";
 import { List } from "./elements/toDoList/List.jsx";
 import { StyleMode } from "./elements/navigation/StyleMode.jsx";
+import { About } from "./elements/about/About.jsx";
 
 
 const theme = {
@@ -31,6 +32,7 @@ const Main = () => {
     return <main id="main">
         <ToDOList />
         <Calendar />
+        <About />
     </main>
 }
 

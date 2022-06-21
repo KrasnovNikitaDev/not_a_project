@@ -17,6 +17,7 @@
         flex: 1;
         display: grid;
         grid-template-columns: 1fr min-content;
+        grid-template-rows: 420px min-content;
         z-index: 1;
         gap: 10px;
     }
