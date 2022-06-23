@@ -12,28 +12,38 @@
 #root {
     display: flex;
     height: max-content;
-
-    main {
+    #main{
         flex: 1;
         display: grid;
-        grid-template-columns: 1fr min-content;
-        grid-template-rows: 420px min-content;
         z-index: 1;
-        gap: 10px;
     }
 }
 
 
-
-
+@media screen and (min-width: 1300px) {
+    #main {
+        grid-template-columns: 1fr min-content;
+        grid-template-rows: 420px min-content;
+        gap: 10px;
+        
+    }
+}
 
 
 @media screen and (max-width: 1299px) {
     #main {
-        margin-left: 75px;
-        display: grid;
+        flex: 1;
+        grid-template-columns: 1fr max-content;
+        grid-template-rows: 420px max-content;
         gap: 10px;
-        grid-template-columns: 1fr;
+        margin-left: 75px;
+    }
+}
+
+@media screen and (max-width: 1050px)  {
+    #main{
+        grid-template-columns: minmax(450px, 1fr) 1fr ;
+
     }
 }
 
@@ -42,7 +52,6 @@
     #main {
         gap: 5px !important;
         grid-template-columns: 1fr;
-        grid-template-rows: max-content 1fr;
     }
     .add{
         font-size: 20px !important;

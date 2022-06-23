@@ -97,26 +97,32 @@ $lihght: rgb(245, 237, 237);
         }
     }
 
-    .user_panel{
+    .user_panel {
         background-color: $lihght;
     }
-    .task{
+
+    .task {
         background-color: $lihght;
+    }
+
+    .weather_icon {
+        border-radius: 100%;
+        background: radial-gradient(rgba(0, 0, 255, 0.3) 0%, $lihght 57%);
     }
 }
 
 @media screen and (max-width: 570px) {
-    body{
+    body {
         background-color: $lihght;
     }
-    .light{
+
+    .light {
         .todolist {
             background-image: url("../images/clipboard_light.png");
         }
-        
+
         .dashboard {
             background-image: url("../images/dashboard_light.png");
         }
     }
 }
-

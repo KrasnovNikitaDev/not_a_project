@@ -1,16 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
 import './style_list.scss';
-import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, Outlet, useOutletContext, useSearchParams } from "react-router-dom";
 import { TaskForm } from './AddTask.jsx';
-
 
 export const Header = () => {
     const [modal, setModal] = useState(false);
     const { pathname } = useLocation();
+    const [searchParams] = useSearchParams();
 
-    const today = useSelector(({ calendar_reducer }) => calendar_reducer.date);
+    const today = searchParams.get('date')
 
     const show_modal_add = () => setModal(state => !state);
 

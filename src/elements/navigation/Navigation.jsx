@@ -6,11 +6,14 @@ import { Logout } from './Logout.jsx'
 import { USER_GET_TASKS } from "../../store/action.js";
 import { useDispatch } from 'react-redux';
 import { ThemeContext } from "../../App.jsx";
+import { useMediaQuery } from "react-responsive";
+import { WeatherComponent } from "../weather/WeatherComponent.jsx";
 
 
 export const Navigation = ({ fn, children }) => {
     const dispatch = useDispatch();
     const theme = useContext(ThemeContext);
+    const addWeatherComponent = useMediaQuery({maxWidth: 700});
 
     useEffect(
         () => {
@@ -26,6 +29,13 @@ export const Navigation = ({ fn, children }) => {
         <Nav />
         <hr />
         {children}
+        {
+            addWeatherComponent && <>
+                <hr/>
+                <WeatherComponent />
+                <hr />
+            </>
+        }
         <Logout logoutFunction={fn} />
     </div>
 

@@ -7,7 +7,8 @@ import { Form } from "./elements/login/Form.jsx";
 import { ToDOList } from "./elements/toDoList/ToDoList.jsx";
 import { List } from "./elements/toDoList/List.jsx";
 import { StyleMode } from "./elements/navigation/StyleMode.jsx";
-import { About } from "./elements/about/About.jsx";
+import { WeatherComponent } from "./elements/weather/WeatherComponent.jsx";
+import { useMediaQuery } from "react-responsive";
 
 
 const theme = {
@@ -29,10 +30,12 @@ const Modal = ({ fn }) => {
 
 
 const Main = () => {
+    const weatherComponent = useMediaQuery({minWidth: 701});
+
     return <main id="main">
         <ToDOList />
         <Calendar />
-        <About />
+        { weatherComponent && <WeatherComponent />}
     </main>
 }
 

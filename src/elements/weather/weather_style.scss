@@ -1,0 +1,94 @@
+.weather {
+    width: calc(100% - 10px);
+    height: 100%;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+
+    img {
+        width: 125px;
+        height: 125px;
+    }
+
+    p:first-child {
+        font-size: 18px;
+        height: 20px;
+        text-transform: uppercase;
+
+    }
+
+    p:not(:first-child) {
+        font-size: 18px;
+        height: 18px;
+        text-align: center;
+
+    }
+
+    .loading {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+@media screen and (max-width: 1050px) {
+    .weather {
+        min-width: min-content;
+        grid-column: 2/3;
+        grid-row: 1/2;
+
+        p {
+            display: grid;
+            align-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .weather {
+        height: min-content;
+        padding: 0;
+        gap: 25px;
+
+        img {
+            width: 45px;
+            height: 45px;
+        }
+
+        p {
+            display: none;
+        }
+
+        p:nth-child(3) {
+            font-size: 18px;
+            height: 18px;
+            display: block;
+        }
+
+        .loading {
+            width: 45px;
+            height: 45px;
+        }
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .weather {
+        width: max-content;
+        height: 100%;
+        grid-template-columns: repeat(2, max-content);
+        padding: 0;
+        gap: 10px;
+
+        img {
+            width: 54px;
+            height: 54px;
+        }
+
+        .loading {
+            width: 54px;
+            height: 54px;
+        }
+    }
+}

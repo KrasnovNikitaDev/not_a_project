@@ -22,7 +22,7 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets:["@babel/preset-env", "@babel/preset-react"]
+                        presets: ["@babel/preset-env", "@babel/preset-react"]
                     }
                 }
             },
@@ -32,7 +32,11 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: [ "style-loader", "css-loader", "sass-loader", ]
+                use: ["style-loader", "css-loader", "sass-loader",]
+            },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
         ]
     }

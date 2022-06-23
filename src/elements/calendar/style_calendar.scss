@@ -237,7 +237,10 @@ $tarsition: 300ms;
     .calendar_wrapp {
         grid-column: 1/2;
         grid-row: 1/2;
-        margin: 0 10px;
+        width: calc(100% - 10px);
+
+        margin: 0 0 0 10px ;
+
     }
 }
 
@@ -245,6 +248,8 @@ $tarsition: 300ms;
     .calendar_wrapp {
         margin: 0 5px;
         width: calc(100% - 5px);
+        grid-column: 1/2;
+        grid-row: 1/2;
     }
 }
 
