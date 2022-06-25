@@ -3,7 +3,7 @@ import * as helpers from "./helpers.js"
 import { useForm } from "react-hook-form";
 import * as helper from './helpers.js'
 import { useDispatch } from 'react-redux';
-import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -11,11 +11,11 @@ import { useSearchParams } from "react-router-dom";
 export const Login = ({ setSignIn, setLoginFunction }) => {
     const { register, handleSubmit, setError, formState: { errors } } = useForm();
     const dispatch = useDispatch();
-    const [searchParams, setSearchParams] = useSearchParams();
+    const navigation = useNavigate();
 
     const submite = (value) => {
         helper.logIn_user(value, setLoginFunction, setError, dispatch);
-        setSearchParams({ date: new Date().toLocaleDateString() })
+        navigation(`/?date=${new Date().toLocaleDateString()}`)
     }
 
     const animeUnderline = ({target}) => {

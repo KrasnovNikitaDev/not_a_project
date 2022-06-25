@@ -6,10 +6,9 @@ import { user_reducer } from './user_reducer.js';
 
 
 
-
 const reducerStore = combineReducers({
     calendar_reducer,
-    user_reducer
+    user_reducer,
 })
 
 

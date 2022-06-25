@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext } from "react";
+import React, { useEffect, useState, createContext, lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { Calendar } from "./elements/calendar/Calendara.jsx";
@@ -9,6 +9,7 @@ import { List } from "./elements/toDoList/List.jsx";
 import { StyleMode } from "./elements/navigation/StyleMode.jsx";
 import { WeatherComponent } from "./elements/weather/WeatherComponent.jsx";
 import { useMediaQuery } from "react-responsive";
+const LazyDashboard = lazy(() => import("./elements/dashboard/Dashboard.jsx"))
 
 
 const theme = {
@@ -30,12 +31,12 @@ const Modal = ({ fn }) => {
 
 
 const Main = () => {
-    const weatherComponent = useMediaQuery({minWidth: 701});
+    const weatherComponent = useMediaQuery({ minWidth: 701 });
 
     return <main id="main">
         <ToDOList />
         <Calendar />
-        { weatherComponent && <WeatherComponent />}
+        {weatherComponent && <WeatherComponent />}
     </main>
 }
 
@@ -79,6 +80,11 @@ export default function App() {
                 <Route path="/" element={<List />} />
                 <Route path="done" element={<List />} />
             </Route>
+            <Route path="/dashboard" element={<>
+                <Suspense fallback={<div>Загрузка...</div>}>
+                    <LazyDashboard />
+                </Suspense>
+            </>} />
         </Routes>
         {login || <Modal fn={handleLogin} />}
     </ThemeContext.Provider>

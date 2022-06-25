@@ -21,23 +21,13 @@
         "19.06.2022": {
           "task_list": [
             {
-              "key": "7LXGWDNIVADKM4G",
-              "value": "kllkdfgms;dfkgsdfg",
-              "done": false
-            },
-            {
-              "key": "365N47B3WM8IAT3",
-              "value": "asdfsd",
-              "done": false
-            },
-            {
-              "key": "SI2CBP37CKVQMIS",
-              "value": "sdfs",
-              "done": false
-            },
-            {
               "key": "9W6undefinedOVQ0JSJO36R",
               "value": "erg",
+              "done": false
+            },
+            {
+              "key": "HDJW8undefinedK2V3HGJBZ",
+              "value": "3241234",
               "done": false
             },
             {
@@ -51,33 +41,145 @@
               "done": false
             },
             {
-              "key": "HDJW8undefinedK2V3HGJBZ",
-              "value": "3241234",
-              "done": false
-            },
-            {
               "key": "1OHHO9OTBGR7ACV",
               "value": "asdfs",
               "done": false
             },
             {
+              "key": "Z5QSDH3WZNZ4Q23",
+              "value": "lkm;l",
+              "done": false
+            },
+            {
+              "key": "JL4BG3811TRN4VP",
+              "value": "k",
+              "done": false
+            },
+            {
+              "key": "CZUSZZI61IRNSLG",
+              "value": "ll;m",
+              "done": false
+            },
+            {
+              "key": "HXCND9ROFR1XTUR",
+              "value": "kjb",
+              "done": false
+            },
+            {
+              "key": "OIADVDM8BN7ECWI",
+              "value": "jhb",
+              "done": false
+            },
+            {
+              "key": "FIQMEundefinedLMLHHDXV7",
+              "value": "p",
+              "done": false
+            },
+            {
+              "key": "1MOMULAS5undefinedJI4SV",
+              "value": "kl;;",
+              "done": false
+            },
+            {
+              "key": "RRCKAFQPHG8UWRU",
+              "value": ",",
+              "done": false
+            }
+          ],
+          "done_task_list": [
+            {
+              "key": "7LXGWDNIVADKM4G",
+              "value": "kllkdfgms;dfkgsdfg",
+              "done": true
+            },
+            {
+              "key": "365N47B3WM8IAT3",
+              "value": "asdfsd",
+              "done": true
+            },
+            {
+              "key": "SI2CBP37CKVQMIS",
+              "value": "sdfs",
+              "done": true
+            },
+            {
               "key": "B60SZIVVCZ55TCE",
               "value": "asdfs",
-              "done": false
+              "done": true
             },
             {
               "key": "PI2ESRM3AFGSALM",
               "value": "asdfsfas",
-              "done": false
+              "done": true
             },
             {
               "key": "0SJUV1FTYC3IN78",
               "value": "hbjl",
-              "done": false
-            },
+              "done": true
+            }
+          ]
+        },
+        "23.06.2022": {
+          "task_list": [
             {
-              "key": "Z5QSDH3WZNZ4Q23",
-              "value": "lkm;l",
+              "key": "U6Z7158ACPHKMQH",
+              "value": "new task",
+              "done": false
+            }
+          ],
+          "done_task_list": []
+        },
+        "03.01.2018": {
+          "task_list": [
+            {
+              "key": "undefinedMZ5RBCHEOHQNS8",
+              "value": "dfas2",
+              "done": false
+            }
+          ],
+          "done_task_list": [
+            {
+              "key": "U9GHZFDXXM8S84A",
+              "value": "skdaflsdf",
+              "done": true
+            }
+          ]
+        },
+        "10.05.2022": {
+          "task_list": [
+            {
+              "key": "4A1ZOBAZ61O26C6",
+              "value": "db;sdbd",
+              "done": false
+            }
+          ],
+          "done_task_list": []
+        },
+        "16.06.2022": {
+          "task_list": [
+            {
+              "key": "K9K6JLE9VLSBFML",
+              "value": "terewrgwerg",
+              "done": false
+            }
+          ],
+          "done_task_list": []
+        },
+        "11.06.2022": {
+          "task_list": [
+            {
+              "key": "8VRZY7F21SVLU06",
+              "value": "ergle;rge",
+              "done": false
+            }
+          ],
+          "done_task_list": []
+        },
+        "23.12.2022": {
+          "task_list": [
+            {
+              "key": "JEWGO277O6WAWR2",
+              "value": "g;e;lrmg",
               "done": false
             }
           ],
