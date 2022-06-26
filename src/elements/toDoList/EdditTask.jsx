@@ -6,7 +6,7 @@ import { useLocation, useSearchParams } from "react-router-dom";
 
 
 export const Eddit = ({ task, hideModal }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, setFocus } = useForm();
     const dispatch = useDispatch();
     const [searchParams] = useSearchParams();
     const param = searchParams.get('date');
@@ -14,9 +14,11 @@ export const Eddit = ({ task, hideModal }) => {
     const { pathname } = useLocation();
 
     useEffect(
-        () => hideModal && document.addEventListener('keydown', ({key}) => {
+        () => {
+            setFocus("eddit")
+            hideModal && document.addEventListener('keydown', ({key}) => {
             key === 'Escape' && hideModal();
-        })
+        })}
     , [hideModal])
 
 

@@ -34,19 +34,19 @@ export const Nav = () => {
         {
             isFullHDMonitor && <nav>
                 <Link to={`/?date=${today}`}>ежедневник</Link>
-                <Link to="/dashboard">панель управления</Link>
+                <Link to="/dashboard?page=1">панель управления</Link>
             </nav>
         }
         {
             isSmallMonitor && <nav>
                 <Link className="todolist" to={`/?date=${today}`}></Link>
-                <Link className="dashboard" to={`/dashboard`}></Link>
+                <Link className="dashboard" to={`/dashboard?page=1`}></Link>
             </nav>
         }
         {
             isMobile && <>
                 <Link className="todolist" to={`/?date=${today}`}></Link>
-                <Link className="dashboard" to={`/dashboard`}></Link>
+                <Link className="dashboard" to={`/dashboard?page=1`}></Link>
             </>
 
         }

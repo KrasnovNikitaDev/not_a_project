@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 
 
 export const TaskForm = ({ show, hide }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, setFocus} = useForm();
     const [searchParams] = useSearchParams();
     const dispatch = useDispatch();
     const { list, user } = useSelector(store => store.user_reducer);
@@ -16,9 +16,12 @@ export const TaskForm = ({ show, hide }) => {
 
 
     useEffect(
-        () => show && document.addEventListener('keydown', ({key}) => {
+        () => {
+            setFocus("task")
+            show && document.addEventListener('keydown', ({key}) => {
             key === 'Escape' && hide();
         })
+    }
     , [show])
 
     const add = ({ task }) => {
