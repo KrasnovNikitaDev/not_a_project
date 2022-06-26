@@ -45,7 +45,15 @@ const if_date = (list, n) => {
     let [a] = list[n - 1];
     let [b] = list[n]
 
-    return [a, b]
+    const data_parse = (str) => {
+        let a = str;
+        a = a.split('.');
+        [a[0], a[1]] = [a[1], a[0]]
+        a = a.join('.')
+        return Date.parse(a)
+    }
+
+    return [data_parse(a), data_parse(b)]
 }
 
 const if_tasks = (list, n) => {
@@ -117,3 +125,7 @@ export const page_setting = (page) => {
     })
 
 }
+
+
+
+
