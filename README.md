@@ -1,18 +1,18 @@
 # Приложение "Ежедневник"
 ## Стек технологий
 ### Зависимости
-- react: ^18.1.0,
-- react-redux: ^8.0.1,
-- redux-thunk: ^2.4.1
-- react-router-dom: ^6.3.0,
-- react-hook-form: ^7.31.2,
-- react-responsive: ^9.0.0-beta.10,
-- redux-devtools-extension: ^2.13.9,
-- json-server: ^0.17.0,
-- axios: ^0.27.2,
-- framer-motion: ^6.3.10,
-### Сборки
-- webpack
+- react.
+- react-redux.
+- redux-thunk.
+- react-router-dom.
+- react-hook-form.
+- react-responsive.
+- redux-devtools-extension.
+- json-server.
+- axios.
+- framer-motion.
+### Сборка
+- webpack (webpack.config.js)
 ## Запуск приложениея
 - **json-server db.json --watch** - запускает псевдо базу данных.
 - **npm run devServer** - запускает приложение.
