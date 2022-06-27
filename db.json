@@ -4,13 +4,7 @@
       "name": "user",
       "mail": "user@mail.com",
       "password": "123",
-      "id": 2
-    },
-    {
-      "name": "new user",
-      "mail": "new_user@mail.com",
-      "password": "password",
-      "id": 3
+      "id": 1
     }
   ],
   "tasks": [
@@ -18,368 +12,106 @@
       "id": 1,
       "user": "user@mail.com",
       "list": {
-        "19.06.2022": {
+        "27.06.2022": {
           "task_list": [
             {
               "key": "9W6undefinedOVQ0JSJO36R",
-              "value": "erg",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "HDJW8undefinedK2V3HGJBZ",
-              "value": "3241234",
-              "done": false
-            },
-            {
-              "key": "3HUGI8TM7OP1FTH",
-              "value": "qr234f32413",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "2U8MP178YXFCM73",
-              "value": "413241234",
+              "value": "Привет мир",
+              "done": false
+            },
+            {
+              "key": "3HUGI8TM7OP1FTH",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "1OHHO9OTBGR7ACV",
-              "value": "asdfs",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "Z5QSDH3WZNZ4Q23",
-              "value": "lkm;l",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "JL4BG3811TRN4VP",
-              "value": "k",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "CZUSZZI61IRNSLG",
-              "value": "ll;m",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "HXCND9ROFR1XTUR",
-              "value": "kjb",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "OIADVDM8BN7ECWI",
-              "value": "jhb",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "FIQMEundefinedLMLHHDXV7",
-              "value": "p",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "1MOMULAS5undefinedJI4SV",
-              "value": "kl;;",
+              "value": "Привет мир",
               "done": false
             },
             {
               "key": "RRCKAFQPHG8UWRU",
-              "value": ",",
+              "value": "Привет мир",
               "done": false
             }
           ],
           "done_task_list": [
             {
-              "key": "7LXGWDNIVADKM4G",
-              "value": "kllkdfgms;dfkgsdfg",
-              "done": true
-            },
-            {
               "key": "365N47B3WM8IAT3",
-              "value": "asdfsd",
+              "value": "Привет мир",
               "done": true
             },
             {
               "key": "SI2CBP37CKVQMIS",
-              "value": "sdfs",
+              "value": "Привет мир",
               "done": true
             },
             {
               "key": "B60SZIVVCZ55TCE",
-              "value": "asdfs",
+              "value": "Привет мир",
+              "done": true
+            },
+            {
+              "key": "7LXGWDNIVADKM4G",
+              "value": "Привет мир",
               "done": true
             },
             {
               "key": "PI2ESRM3AFGSALM",
-              "value": "asdfsfas",
+              "value": "Привет мир",
               "done": true
             },
             {
               "key": "0SJUV1FTYC3IN78",
-              "value": "hbjl",
+              "value": "Привет мир",
               "done": true
             }
           ]
-        },
-        "23.06.2022": {
-          "task_list": [
-            {
-              "key": "U6Z7158ACPHKMQH",
-              "value": "new task",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "03.01.2018": {
-          "task_list": [
-            {
-              "key": "undefinedMZ5RBCHEOHQNS8",
-              "value": "dfas2",
-              "done": false
-            }
-          ],
-          "done_task_list": [
-            {
-              "key": "U9GHZFDXXM8S84A",
-              "value": "skdaflsdf",
-              "done": true
-            }
-          ]
-        },
-        "10.05.2022": {
-          "task_list": [
-            {
-              "key": "4A1ZOBAZ61O26C6",
-              "value": "db;sdbd",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "16.06.2022": {
-          "task_list": [
-            {
-              "key": "K9K6JLE9VLSBFML",
-              "value": "terewrgwerg",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "11.06.2022": {
-          "task_list": [
-            {
-              "key": "8VRZY7F21SVLU06",
-              "value": "ergle;rge",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "23.12.2022": {
-          "task_list": [
-            {
-              "key": "JEWGO277O6WAWR2",
-              "value": "g;e;lrmg",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "26.06.2022": {
-          "task_list": [],
-          "done_task_list": [
-            {
-              "key": "8QAH8MMAZLT9A0P",
-              "value": "sadfasdfasdfdfdfd asdas",
-              "done": true
-            },
-            {
-              "key": "0Q3HOJ9P9LOHPJX",
-              "value": "gtwrtg",
-              "done": true
-            },
-            {
-              "key": "G2HDJ68ZV4WVX1C",
-              "value": "wtgtrg",
-              "done": true
-            },
-            {
-              "key": "1NNJS3U360EF6W2",
-              "value": "wtgwtrgwrt",
-              "done": true
-            },
-            {
-              "key": "KZEundefinedundefined1U4DV87ADB",
-              "value": "rtgr",
-              "done": true
-            }
-          ]
-        },
-        "25.06.2022": {
-          "task_list": [
-            {
-              "key": "WN2NPV9E14CBIDundefined",
-              "value": "asdf",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "24.06.2022": {
-          "task_list": [
-            {
-              "key": "K9OXFEOVEHPU46G",
-              "value": "asdfsdfg",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "18.06.2022": {
-          "task_list": [
-            {
-              "key": "SQAVTBFVYZDOundefined95",
-              "value": "asdf",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "17.06.2022": {
-          "task_list": [
-            {
-              "key": "7FWS6XAONCB15I3",
-              "value": "234",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "10.06.2022": {
-          "task_list": [
-            {
-              "key": "YYJNWLPBTSETPHF",
-              "value": "234",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "02.07.2022": {
-          "task_list": [
-            {
-              "key": "DZKBE226YH7NHJE",
-              "value": "1qfwadvav",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "22.06.2022": {
-          "task_list": [
-            {
-              "key": "RG29UH1M8OQ2YZ9",
-              "value": "фыва",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "21.06.2022": {
-          "task_list": [
-            {
-              "key": "W51T9undefined3AJK4IG7G",
-              "value": "ффыва",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "20.06.2022": {
-          "task_list": [
-            {
-              "key": "HTHRFSQWG53X07W",
-              "value": "фыва",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "15.06.2022": {
-          "task_list": [
-            {
-              "key": "O4XK9EZXBDTMYB7",
-              "value": "фыва",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "08.07.2022": {
-          "task_list": [
-            {
-              "key": "7WPDN577JQPC13N",
-              "value": "фыва",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        },
-        "05.08.2022": {
-          "task_list": [
-            {
-              "key": "K8GOZ6U3KXDXP2B",
-              "value": "3й4к143",
-              "done": false
-            }
-          ],
-          "done_task_list": []
-        }
-      }
-    },
-    {
-      "id": 3,
-      "user": "new_user@mail.com",
-      "list": {
-        "18.06.2022": {
-          "task_list": [
-            {
-              "key": "YRGMETVXC5F1undefined1Z",
-              "value": "n .nm \n",
-              "done": false
-            },
-            {
-              "key": "VUU1DUW34ZH46BO",
-              "value": "n .n;falskm 343242j",
-              "done": false
-            },
-            {
-              "key": "5Z8HWS4HO6undefinedYQ68",
-              "value": "lksaflkfmlksdflasd",
-              "done": false
-            },
-            {
-              "key": "ZFPGZEW7WF2S5MN",
-              "value": "dfkdlfkasd",
-              "done": false
-            },
-            {
-              "key": "5JAMWZPNWV8YK4H",
-              "value": "asdlkfsadf",
-              "done": false
-            },
-            {
-              "key": "FYVK6N05WO192M9",
-              "value": "123131",
-              "done": false
-            },
-            {
-              "key": "OABZKGSKF741WYS",
-              "value": "23412342",
-              "done": false
-            }
-          ],
-          "done_task_list": []
         }
       }
     }

@@ -1,9 +1,6 @@
-import React, { useContext, lazy, useState, useEffect } from 'react';
-import { ThemeContext } from '../../App.jsx';
-import "./dashboard_style.scss";
-import { Table } from './Table.jsx';
-import { useSelector } from "react-redux";
-import { page_setting, pagination, pag_length, pag_page_array, custom_sort } from './dashboard_function.js';
+import React, { useEffect } from 'react';
+import "./table_style.scss";
+import { page_setting, pagination, pag_length, pag_page_array, custom_sort } from './table_function.js';
 import { useSearchParams } from "react-router-dom";
 
 

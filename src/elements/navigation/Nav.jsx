@@ -34,7 +34,7 @@ export const Nav = () => {
         {
             isFullHDMonitor && <nav>
                 <Link to={`/?date=${today}`}>ежедневник</Link>
-                <Link to="/dashboard?page=1">панель управления</Link>
+                <Link to="/dashboard?page=1">таблица</Link>
             </nav>
         }
         {

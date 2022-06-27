@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { render_table } from './dashboard_function.js';
+import { render_table } from './table_function.js';
 
 
 export const TBody = ({ list }) => {

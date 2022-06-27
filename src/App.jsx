@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext, lazy, Suspense } from "react";
+import React, {  useState, createContext, lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { Calendar } from "./elements/calendar/Calendara.jsx";
@@ -9,7 +9,7 @@ import { List } from "./elements/toDoList/List.jsx";
 import { StyleMode } from "./elements/navigation/StyleMode.jsx";
 import { WeatherComponent } from "./elements/weather/WeatherComponent.jsx";
 import { useMediaQuery } from "react-responsive";
-const LazyDashboard = lazy(() => import("./elements/dashboard/Dashboard.jsx"))
+const LazyDashboard = lazy(() => import("./elements/table/Dashboard.jsx"))
 
 
 const theme = {
